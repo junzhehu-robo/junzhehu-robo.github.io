@@ -1,229 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Junzhe Hu | Homepage</title>
-  <meta name="description" content="Personal academic homepage of Junzhe Hu — CMU RI / Soft Machines Lab & RExLab. Robotics, bio-inspired robots, variable stiffness mechanisms, and robot learning." />
-  <meta property="og:title" content="Junzhe Hu | Homepage" />
-  <meta property="og:description" content="Robotics • Soft machines • Aquatic robots • Learning for control" />
-  <meta name="theme-color" content="#0e1116" />
-  <style>
-    :root{
-      --bg: #0e1116;
-      --card: #141922;
-      --text: #e6e6e6;
-      --muted: #aab0b8;
-      --link: #7aa2ff;
-      --accent: #69d2ff;
-      --chip: #1f2633;
-      --border: #263042;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 20px 80px}
-    header{display:flex;gap:22px;align-items:center;margin:8px 0 20px}
-    .avatar{width:92px;height:92px;border-radius:20px;background:#222 center/cover no-repeat;flex:0 0 92px;border:1px solid var(--border)}
-    h1{font-size:2.05rem;margin:.2rem 0 .3rem}
-    .subtitle{color:var(--muted);margin:.1rem 0 .6rem}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:.6rem 0 .2rem}
-    .chip{background:var(--chip);border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:#d4d9df;font-size:.9rem}
-    .links{display:flex;flex-wrap:wrap;gap:10px;margin:.4rem 0}
-    .links a{display:inline-flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--border);padding:6px 10px;border-radius:8px}
-    main section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 18px;margin:14px 0}
-    h2{font-size:1.25rem;margin:.2rem 0 .8rem}
-    .twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
-    @media (max-width:900px){.twocol{grid-template-columns:1fr}}
-    .news ul{margin:.2rem 0 0;padding-left:20px}
-    .news li{margin:.4rem 0}
-    .pub{margin:1rem 0 1.2rem}
-    .pub .title{font-weight:700}
-    .badges{display:flex;flex-wrap:wrap;gap:8px;margin:.35rem 0}
-    .badge{display:inline-block;background:var(--chip);border:1px solid var(--border);padding:3px 8px;border-radius:7px;font-size:.85rem}
-    .authors{color:#cfd6de}
-    .where{color:#9fb4ff; font-weight:600}
-    .grid{display:grid;gap:12px}
-    .edu-card{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;background:linear-gradient(180deg, #171d27, #141a22);border:1px solid var(--border);border-radius:12px;padding:10px 12px}
-    .edu-logo{width:64px;height:64px;border-radius:8px;background:#1d2533}
-    footer{color:var(--muted);margin-top:20px}
-    .small{font-size:.92rem}
-    .cn{opacity:.85}
-    /* print */
-    @media print{a{text-decoration:underline}.wrap{padding:0}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junzhe Hu - Robotics Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-hover: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --border: #334155;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Header Section */
+        header {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-2);
+        }
+        
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-links a {
+            padding: 0.6rem 1.2rem;
+            background: var(--bg-hover);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+        
+        .contact-links a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Section Cards */
+        .section-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section-card h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-card h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--gradient-2);
+            border-radius: 2px;
+        }
+        
+        /* Experience Items */
+        .experience-item {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: var(--accent);
+        }
+        
+        .experience-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .experience-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+        
+        .experience-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+        
+        .experience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+        }
+        
+        .mini-tag {
+            padding: 0.2rem 0.6rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: #a78bfa;
+        }
+        
+        /* Projects */
+        .project-item {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .project-item:hover {
+            transform: translateX(5px);
+            border-color: var(--accent);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        /* News Items */
+        .news-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: rgba(30, 41, 59, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .news-item:hover {
+            background: rgba(30, 41, 59, 0.6);
+        }
+        
+        .news-date {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 80px;
+        }
+        
+        /* Publications */
+        .publication {
+            background: rgba(30, 41, 59, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .publication:hover {
+            background: rgba(30, 41, 59, 0.5);
+            transform: translateX(5px);
+        }
+        
+        .pub-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .pub-authors {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .pub-venue {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pub-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+        
+        .pub-links a {
+            padding: 0.3rem 0.8rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        
+        .pub-links a:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Full width sections */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-card {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            background: rgba(30, 41, 59, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        
+        .skill-category h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-item {
+            padding: 0.3rem 0.6rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="avatar" style="background-image:url('Junzhe.png')" aria-label="Portrait of Junzhe Hu"></div>
-      <div>
-        <h1>Junzhe Hu</h1>
-        <div class="subtitle">Master of Science in Robotics · CMU Robotics Institute · Soft Machines Lab & RExLab</div>
-        <div class="chips">
-          <span class="chip">Bioinspired Robotics</span>
-          <span class="chip">Variable Stiffness</span>
-          <span class="chip">Modeling & Optimization</span>
-          <span class="chip">FSI Simulation</span>
-          <span class="chip">Robot Learning</span>
-        </div>
-        <div class="links">
-          <a href="mailto:junzhehu@andrew.cmu.edu" aria-label="Email">✉️ Email</a>
-          <a href="https://scholar.google.com/citations?hl=zh-CN&user=_uTuxYUAAAAJ" target="_blank" rel="noopener">📚 Google Scholar</a>
-          <a href="https://www.linkedin.com/in/junzhe-hu/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-        </div>
-      </div>
-    </header>
-
-    <main class="twocol">
-
-            <!-- ===== About Me ===== -->
-      <section>
-        <h2>About Me</h2>
-        <p>
-          I am a Master's student in Robotics at Carnegie Mellon University’s Robotics Institute, 
-          working with the <strong>Soft Machines Lab</strong> (Prof. Carmel Majidi) and 
-          <strong>RExLab</strong> (Prof. Zac Manchester). 
-          My research focuses on <em>bio-inspired aquatic robots</em>, 
-          <em>variable-stiffness mechanisms</em>, 
-          <em>fluid–structure interaction (FSI) simulation</em>, and 
-          <em>robot learning for control</em>. 
-          I aim to integrate smart materials, optimization, and learning methods 
-          to build efficient and adaptive swimming robots.
-        </p>
-      </section>
-      <!-- ===== Experience (前置) ===== -->
-      <section>
-        <h2>Experience</h2>
-        <div class="grid">
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('CMURI.jpg') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>Carnegie Mellon University</strong></div>
-              <div class="subtitle">Graduate Research Assistant · Robotics Institute · Aug 2024 – Present</div>
-              <div class="badges"><span class="badge">Aquatic robots</span><span class="badge">Mechatronic Design</span><span class="badge">Fluid-Robot Interaction and Optimization</span><span class="badge">Robot Learning</span><span class="badge">Smart Material</span></div>
+    <div class="container">
+        <header>
+            <div class="profile-img">JH</div>
+            <div class="header-content">
+                <h1>Junzhe Hu</h1>
+                <div class="subtitle">Master of Science in Robotics · CMU Robotics Institute</div>
+                <div class="subtitle">Soft Machines Lab & RExLab</div>
+                <div class="tags">
+                    <span class="tag">🤖 Bioinspired Robotics</span>
+                    <span class="tag">🔧 Variable Stiffness</span>
+                    <span class="tag">📊 Modeling & Optimization</span>
+                    <span class="tag">💧 FSI Simulation</span>
+                    <span class="tag">🧠 Robot Learning</span>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:junzhehu@andrew.cmu.edu">📧 Email</a>
+                    <a href="https://scholar.google.com/citations?hl=zh-CN&user=_uTuxYUAAAAJ" target="_blank">📚 Google Scholar</a>
+                    <a href="https://www.linkedin.com/in/junzhe-hu/" target="_blank">💼 LinkedIn</a>
+                </div>
             </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('UC.png') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>University of Cincinnati</strong></div>
-              <div class="subtitle">Research Assistant · Aug 2023 – May 2024</div>
-              <div class="badges"><span class="badge">Capstone Award</span><span class="badge">Variable stiffness</span></div>
+        </header>
+
+        <div class="content-grid">
+            <!-- About Me -->
+            <div class="section-card">
+                <h2>About Me</h2>
+                <p>I am a Master's student in Robotics at Carnegie Mellon University's Robotics Institute, working with the <strong>Soft Machines Lab</strong> (Prof. Carmel Majidi) and <strong>RExLab</strong> (Prof. Zac Manchester).</p>
+                <p style="margin-top: 1rem;">My research focuses on <em>bio-inspired aquatic robots</em>, <em>variable-stiffness mechanisms</em>, <em>fluid–structure interaction (FSI) simulation</em>, and <em>robot learning for control</em>. I aim to integrate smart materials, optimization, and learning methods to build efficient and adaptive swimming robots.</p>
             </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('EPFL.png') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>EPFL (Biorob / RehAssist)</strong></div>
-              <div class="subtitle">Research Assistant · Jan 2023 – Aug 2023</div>
-              <div class="badges"><span class="badge">Medical robotics</span><span class="badge">Image segmentation</span></div>
+
+            <!-- Experience -->
+            <div class="section-card">
+                <h2>Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-logo">CMU</div>
+                        <div>
+                            <div class="experience-title">Carnegie Mellon University</div>
+                            <div class="experience-subtitle">Graduate Research Assistant · Aug 2024 – Present</div>
+                        </div>
+                    </div>
+                    <div class="experience-tags">
+                        <span class="mini-tag">Aquatic robots</span>
+                        <span class="mini-tag">Mechatronic Design</span>
+                        <span class="mini-tag">Robot Learning</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-logo">UC</div>
+                        <div>
+                            <div class="experience-title">University of Cincinnati</div>
+                            <div class="experience-subtitle">Research Assistant · Aug 2023 – May 2024</div>
+                        </div>
+                    </div>
+                    <div class="experience-tags">
+                        <span class="mini-tag">Capstone Award</span>
+                        <span class="mini-tag">Variable stiffness</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-logo">EPFL</div>
+                        <div>
+                            <div class="experience-title">EPFL (Biorob / RehAssist)</div>
+                            <div class="experience-subtitle">Research Assistant · Jan 2023 – Aug 2023</div>
+                        </div>
+                    </div>
+                    <div class="experience-tags">
+                        <span class="mini-tag">Medical robotics</span>
+                        <span class="mini-tag">Image segmentation</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('INRIA.png') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>INRIA</strong></div>
-              <div class="subtitle">Research Assistant · Aug 2023 – Jan 2024</div>
-              <div class="badges"><span class="badge">Cosserat rod</span><span class="badge">Modeling</span></div>
+
+            <!-- Projects -->
+            <div class="section-card">
+                <h2>Projects</h2>
+                
+                <div class="project-item">
+                    <div class="project-title">🦟 Passive Paddle / Diving-Beetle-Leg Modules</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Variable stiffness, servo-driven joints, modular assembly; Instron-validated stiffness (10⁻⁵–10⁻³ N·m/rad).</p>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-title">💧 GelSight-Inspired Flow Sensor</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">XP-565 silicone, LED array & camera; captures micro-flow patterns and vortices around the robot head.</p>
+                </div>
             </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('SIAT.jfif') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>SIAT, Chinese Academy of Sciences</strong></div>
-              <div class="subtitle">Research Intern · 2021 – 2022</div>
-              <div class="badges"><span class="badge">Soft robots</span><span class="badge">Bio-inspired design</span></div>
+
+            <!-- News -->
+            <div class="section-card">
+                <h2>News</h2>
+                
+                <div class="news-item">
+                    <span class="news-date">Jul 2025</span>
+                    <span>Our IROS 2025 paper on aerial-aquatic locomotion was accepted.</span>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-date">Apr 2025</span>
+                    <span>Kicked off a vision-based GelSight-style flow sensor for vortex detection.</span>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-date">Nov 2024</span>
+                    <span>Built a variable-stiffness fish-tail prototype with 42× stiffness range.</span>
+                </div>
             </div>
-          </div>
+
+            <!-- Publications -->
+            <div class="section-card full-width">
+                <h2>Selected Publications</h2>
+                
+                <div class="publication">
+                    <div class="pub-title">A Novel Aerial-Aquatic Locomotion Robot with Variable-Stiffness Propulsion Module</div>
+                    <div class="pub-authors">Pengyu Chen, Tianxiang Feng, Yuxuan Wen, Ke Wu, <strong>Junzhe Hu</strong>, Janet Dong, ...</div>
+                    <div class="pub-venue">IEEE IROS 2025</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2409.09572" target="_blank">📄 Paper</a>
+                    </div>
+                </div>
+                
+                <div class="publication">
+                    <div class="pub-title">StiFin: Spatiotemporal Stiffness Modulation for Efficient Aquatic Robot Locomotion</div>
+                    <div class="pub-authors"><strong>Junzhe Hu</strong>, J. Lee, T. Wu, ..., Majidi, Manchester</div>
+                    <div class="pub-venue">NPJ Robotics, 2025</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2506.05012" target="_blank">📄 Preprint</a>
+                    </div>
+                </div>
+                
+                <div class="publication">
+                    <div class="pub-title">SwimGym: A Unified Multiphysics Framework for Fluid–Robot Simulation and Training</div>
+                    <div class="pub-authors"><strong>Junzhe Hu</strong>, J. Lee, S. Kwok, ..., Manchester</div>
+                    <div class="pub-venue">RSS 2026 (Under review)</div>
+                    <div class="pub-links">
+                        <a href="#" style="opacity: 0.5; cursor: not-allowed;">📄 Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills & Awards -->
+            <div class="section-card">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Proficient</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">MATLAB/Simulink</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">C++</span>
+                            <span class="skill-item">SolidWorks</span>
+                            <span class="skill-item">Comsol</span>
+                            <span class="skill-item">PCB Design</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Skilled</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Julia</span>
+                            <span class="skill-item">Blender</span>
+                            <span class="skill-item">SOFA</span>
+                            <span class="skill-item">PyTorch</span>
+                            <span class="skill-item">Abaqus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>Honors & Awards</h2>
+                <div style="padding-left: 1rem;">
+                    <p style="margin-bottom: 0.5rem;">🏆 2024 Best Capstone Project Award (UC MechE, 1/130)</p>
+                    <p style="margin-bottom: 0.5rem;">🎖️ Chinese Government National Scholarship (0.8% selected)</p>
+                    <p>⭐ Chongqing University Student Pacesetter (top 0.18%)</p>
+                </div>
+            </div>
         </div>
-      </section>
-
-      <!-- ===== Projects ===== -->
-      <section>
-        <h2>Projects</h2>
-        <div class="grid">
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('thumb_aqua.jpg') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>Passive Paddle / Diving-Beetle-Leg Modules</strong></div>
-              <div class="subtitle">Variable stiffness, servo-driven joints, modular assembly; Instron-validated stiffness (10⁻⁵–10⁻³ N·m/rad).</div>
-            </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('thumb_sensor.jpg') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>GelSight-Inspired Flow Sensor</strong></div>
-              <div class="subtitle">XP-565 silicone, LED array & camera; captures micro-flow patterns and vortices around the robot head.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== News ===== -->
-      <section class="news">
-        <h2>News</h2>
-        <ul>
-          <li><strong>Jul 2025</strong> — Our IROS 2025 paper on aerial-aquatic locomotion was accepted. Camera-ready and video submitted.</li>
-          <li><strong>Apr 2025</strong> — Kicked off a vision-based GelSight-style flow sensor for vortex detection.</li>
-          <li><strong>Nov 2024</strong> — Built a variable-stiffness fish-tail prototype with 42× stiffness range.</li>
-        </ul>
-      </section>
-
-      <!-- ===== Publications ===== -->
-      <section>
-        <h2>Selected Publications</h2>
-        <div class="pub">
-          <div class="title">A Novel Aerial-Aquatic Locomotion Robot with Variable-Stiffness Propulsion Module</div>
-          <div class="authors">Pengyu Chen, Tianxiang Feng, Yuxuan Wen, Ke Wu, <strong>Junzhe Hu</strong>, Janet Dong, …</div>
-          <div class="where">IEEE IROS 2025</div>
-          <div class="badges"><a class="badge" href="https://arxiv.org/abs/2409.09572">Paper</a></div>
-        </div>
-        <div class="pub">
-          <div class="title">StiFin: Spatiotemporal Stiffness Modulation for Efficient Aquatic Robot Locomotion</div>
-          <div class="authors"><strong>Junzhe Hu</strong>, J. Lee, T. Wu, …, Majidi, Manchester</div>
-          <div class="where">NPJ Robotics, 2025</div>
-          <div class="badges"><a class="badge" href="https://arxiv.org/abs/2506.05012">Preprint</a></div>
-        </div>
-        <div class="pub">
-          <div class="title">SwimGym: A Unified Multiphysics Framework for Fluid–Robot Simulation and Training</div>
-          <div class="authors"><strong>Junzhe Hu</strong>, J. Lee, S. Kwok, …, Manchester</div>
-          <div class="where">RSS 2026 (Under review)</div>
-          <div class="badges"><span class="badge">Preprint soon</span></div>
-        </div>
-        <p class="small">Full list available in <a href="cv.pdf">my CV</a>.</p>
-      </section>
-
-      <!-- ===== Honors & Awards ===== -->
-      <section>
-        <h2>Honors & Awards</h2>
-        <ul>
-          <li>2024 Best Capstone Project Award (UC MechE, 1/130)</li>
-          <li>Chinese Government National Scholarship (0.8% selected)</li>
-          <li>Chongqing University Student Pacesetter (top 0.18%)</li>
-        </ul>
-      </section>
-
-      <!-- ===== Skills ===== -->
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li><strong>Proficient:</strong> MATLAB/Simulink, Python, C++, SolidWorks, Comsol, PCB Design, LaTeX</li>
-          <li><strong>Skilled:</strong> Julia, Blender, SOFA, PyTorch, Abaqus</li>
-        </ul>
-      </section>
-    </main>
-
-    <footer class="small">
-      <div>Last updated <span id="updated"></span>. Template by <a href="#">JH</a>.</div>
-    </footer>
-  </div>
-
-  <script>
-    const d = new Date();
-    const fmt = d.toLocaleDateString(undefined,{year:'numeric',month:'short'});
-    document.getElementById('updated').textContent = fmt;
-  </script>
+    </div>
 </body>
 </html>
