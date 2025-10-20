@@ -22,17 +22,15 @@
     .wrap{max-width:980px;margin:0 auto;padding:28px 20px 80px}
     header{display:flex;gap:22px;align-items:center;margin:8px 0 20px}
     .avatar{
-  width:170px;
-  height:190px;
-  border-radius:24px; /* 稍微更圆润 */
-  background:#222 center/cover no-repeat;
-  flex:0 0 130px;
-  border:1.5px solid var(--border);
-}
-
+      width:170px;
+      height:190px;
+      border-radius:24px;
+      background:#222 center/cover no-repeat;
+      flex:0 0 130px;
+      border:1.5px solid var(--border);
+    }
     h1{font-size:2.05rem;margin:.2rem 0 .3rem}
     .subtitle{color:var(--muted);margin:.1rem 0 .6rem}
-    /* chips & badges with fun hover */
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin:.6rem 0 .2rem}
     .chip{background:var(--chip);border:1px solid var(--border);padding:6px 10px;border-radius:999px;
       color:#d4d9df;font-size:.9rem;transition:transform .15s ease, box-shadow .15s ease}
@@ -41,7 +39,7 @@
     .links a{display:inline-flex;gap:8px;align-items:center;background:var(--card);
       border:1px solid var(--border);padding:6px 10px;border-radius:8px;
       transition:transform .15s ease, box-shadow .15s ease}
-    .links a:hover{transform:translateY(-1px);box-shadow:0 0 0 6px var(--ring)}
+    .links a:hover{transform:translateY(-1px);box-shadow:0 0 0 6px var(--ring);text-decoration:none}
     main section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 18px;margin:14px 0}
     h2{font-size:1.25rem;margin:.2rem 0 .8rem}
     .twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
@@ -63,12 +61,9 @@
       border-radius:12px;padding:10px 12px;transition:transform .15s ease, box-shadow .15s ease}
     .edu-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.25)}
     .edu-logo{width:64px;height:64px;border-radius:8px;background:#1d2533}
-    footer{color:var(--muted);margin-top:20px}
+    footer{color:var(--muted);margin-top:20px;text-align:center}
     .small{font-size:.92rem}
-    .cn{opacity:.9}
-    /* About Me spans both columns */
     .about{grid-column:1/-1}
-    /* fun section icons spacing */
     .h2icon{margin-right:.4rem;font-size:1.1em}
   </style>
 </head>
@@ -79,16 +74,16 @@
       <div>
         <h1>Junzhe Hu</h1>
         <div class="subtitle">Master of Science in Robotics · CMU Robotics Institute · Soft Machines Lab & RExLab</div>
-<div class="chips">
-  <span class="chip">🐟 Bioinspired Robotics</span>
-  <span class="chip">⚙️ Mechatronic Design</span>
-  <span class="chip">🧩 Variable Stiffness</span>
-  <span class="chip">📐 Modeling & Optimization</span>
-  <span class="chip">🌊 FSI Simulation</span>
-  <span class="chip">🧠 Physic Intelligence</span>
-  <span class="chip">👀 Sensing</span>
-  <span class="chip">🤖 Robot Learning</span>
-</div>
+        <div class="chips">
+          <span class="chip">🐟 Bioinspired Robotics</span>
+          <span class="chip">⚙️ Mechatronic Design</span>
+          <span class="chip">🧩 Variable Stiffness</span>
+          <span class="chip">📐 Modeling & Optimization</span>
+          <span class="chip">🌊 FSI Simulation</span>
+          <span class="chip">🧠 Physic Intelligence</span>
+          <span class="chip">👀 Sensing</span>
+          <span class="chip">🤖 Robot Learning</span>
+        </div>
         <div class="links">
           <a href="mailto:junzhehu@andrew.cmu.edu" aria-label="Email">✉️ Email</a>
           <a href="https://scholar.google.com/citations?hl=zh-CN&user=_uTuxYUAAAAJ" target="_blank" rel="noopener">📚 Google Scholar</a>
@@ -100,25 +95,58 @@
     <main class="twocol">
       <!-- About -->
       <section class="about">
-  <h2><span class="h2icon">🧭</span>About Me</h2>
-  <p>
-    I am a Robotics M.S. student at Carnegie Mellon University Robotics Institute, working with the
-    <strong>Soft Machines Lab</strong> (Prof. Carmel Majidi) and <strong>RExLab</strong> (Prof. Zachary Manchester).
-    My research explores <strong>morphological and physical intelligence</strong> — how morphology, materials, and environment
-    can together form self-organized behavior without centralized computation in robotic systems.
-  </p>
-  <p>
-    I study <strong>variable-stiffness aquatic robots</strong> and <strong>differentiable multiphysics simulation</strong>
-    to understand energy transfer and feedback between robots and fluids. My goal is to unify design, control, and
-    physical law in one framework, revealing how <em>embodied intelligence</em> emerges from the coupling of energy,
-    form, and environment.
-  </p>
-  <p>
-    In the long run, I aim to develop robots that do not just move through enrivoments, but <em>live with them</em> —
-    machines that evolve with their surroundings through material adaptation and distributed control.
-  </p>
-</section>
+        <h2><span class="h2icon">🧭</span>About Me</h2>
+        <p>
+          I am a Robotics M.S. student at Carnegie Mellon University Robotics Institute, working with the
+          <strong>Soft Machines Lab</strong> (Prof. Carmel Majidi) and <strong>RExLab</strong> (Prof. Zachary Manchester).
+          My research explores <strong>morphological and physical intelligence</strong> — how morphology, materials, and environment
+          can together form self-organized behavior without centralized computation in robotic systems.
+        </p>
+        <p>
+          I study <strong>variable-stiffness aquatic robots</strong> and <strong>differentiable multiphysics simulation</strong>
+          to understand energy transfer and feedback between robots and fluids. My goal is to unify design, control, and
+          physical law in one framework, revealing how <em>embodied intelligence</em> emerges from the coupling of energy,
+          form, and environment.
+        </p>
+        <p>
+          In the long run, I aim to develop robots that do not just move through environments, but <em>live with them</em> —
+          machines that evolve with their surroundings through material adaptation and distributed control.
+        </p>
+      </section>
 
+      <!-- News -->
+      <section class="news">
+        <h2><span class="h2icon">📰</span>News</h2>
+        <ul>
+          <li><strong>Jul 2025</strong> — Our IROS 2025 paper on aerial-aquatic locomotion was accepted. Camera-ready and video submitted.</li>
+          <li><strong>Apr 2025</strong> — Kicked off a vision-based GelSight-style flow sensor for vortex detection.</li>
+          <li><strong>Nov 2024</strong> — Built a variable-stiffness fish-tail prototype with 42× stiffness range.</li>
+        </ul>
+      </section>
+
+      <!-- Publications -->
+      <section>
+        <h2><span class="h2icon">📚</span>Selected Publications</h2>
+        <div class="pub">
+          <div class="title">SwimGym: A Unified Multiphysics Framework for Fluid–Robot Simulation and Training</div>
+          <div class="authors"><strong>Junzhe Hu</strong>, J. Lee, S. Kwok, …, Manchester</div>
+          <div class="where">RSS 2026 (Under review)</div>
+          <div class="badges"><span class="badge">⏳ Preprint soon</span></div>
+        </div>
+        <div class="pub">
+          <div class="title">StiFin: Spatiotemporal Stiffness Modulation for Efficient Aquatic Robot Locomotion</div>
+          <div class="authors"><strong>Junzhe Hu</strong>, J. Lee, T. Wu, …, Majidi, Manchester</div>
+          <div class="where">NPJ Robotics, 2025</div>
+          <div class="badges"><a class="badge" href="https://arxiv.org/abs/2506.05012">🔗 Preprint</a></div>
+        </div>
+        <div class="pub">
+          <div class="title">A Novel Aerial-Aquatic Locomotion Robot with Variable-Stiffness Propulsion Module</div>
+          <div class="authors"><strong>Junzhe Hu</strong>, Pengyu Chen, Tianxiang Feng, Yuxuan Wen, Ke Wu, Janet Dong, …</div>
+          <div class="where">IEEE IROS 2025</div>
+          <div class="badges"><a class="badge" href="https://arxiv.org/abs/2409.09572">🔗 Paper</a></div>
+        </div>
+        <p class="small">Full list available in <a href="cv.pdf">my CV</a>.</p>
+      </section>
 
       <!-- Experience -->
       <section>
@@ -167,27 +195,6 @@
         </div>
       </section>
 
-      <!-- Projects -->
-      <section>
-        <h2><span class="h2icon">🛠️</span>Projects</h2>
-        <div class="grid">
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('thumb_aqua.jpg') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>Passive Paddle / Diving-Beetle-Leg Modules</strong> <span aria-hidden="true">🦗</span></div>
-              <div class="subtitle">Variable stiffness, servo-driven joints, modular assembly; Instron-validated stiffness (10⁻⁵–10⁻³ N·m/rad).</div>
-            </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background:url('thumb_sensor.jpg') center/cover no-repeat"></div>
-            <div>
-              <div class="title"><strong>GelSight-Inspired Flow Sensor</strong> <span aria-hidden="true">📸</span></div>
-              <div class="subtitle">XP-565 silicone, LED array & camera; captures micro-flow patterns and vortices around the robot head.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- News -->
       <section class="news">
         <h2><span class="h2icon">📰</span>News</h2>
@@ -213,7 +220,6 @@
           <div class="where">NPJ Robotics, 2025</div>
           <div class="badges"><a class="badge" href="https://arxiv.org/abs/2506.05012">🔗 Preprint</a></div>
         </div>
-
         <div class="pub">
           <div class="title">A Novel Aerial-Aquatic Locomotion Robot with Variable-Stiffness Propulsion Module</div>
           <div class="authors"><strong>Junzhe Hu</strong>, Pengyu Chen, Tianxiang Feng, Yuxuan Wen, Ke Wu, Janet Dong, …</div>
@@ -244,7 +250,7 @@
     </main>
 
     <footer class="small">
-      <div>Last updated <span id="updated"></span>. Template by <a href="#">JH</a>.</div>
+      <div>Last updated <span id="updated"></span>. Design by Junzhe Hu.</div>
     </footer>
   </div>
 
