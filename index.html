@@ -90,6 +90,10 @@
     .about{grid-column:1/-1}
     .news{grid-column:1/-1}
     .h2icon{margin-right:.4rem;font-size:1.1em}
+    .pub-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;flex-wrap:wrap;gap:8px}
+    .pub-header h2{margin:0.2rem 0 0}
+    .pub-header .small{margin:0}
+    @media (max-width:600px){.pub-header{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
@@ -209,7 +213,6 @@
       <section class="news">
         <h2><span class="h2icon">📰</span>News</h2>
         <ul id="newsList">
-        
           <li><strong>Dec 2025</strong> — Invited to present <em>Spatiotemporal Stiffness Modulation</em> framework at CMU Soft Robotics Seminar.</li>
           <li><strong>Oct 2025</strong> — Submitted our <em>Spatiotemporal Stiffness Modulation</em> paper to <strong>npj Robotics</strong>.</li>
           <li><strong>Oct 2025</strong> — Released <strong>Aquarium 2.0</strong> preprint; preparing reinforcement-learning examples for <em>RSS 2026</em> submission.</li>
@@ -234,7 +237,10 @@
 
       <!-- Publications -->
       <section class="about">
-        <h2><span class="h2icon">📚</span>Selected Publications</h2>
+        <div class="pub-header">
+          <h2><span class="h2icon">📚</span>Selected Publications</h2>
+          <p class="small">Full list available in <a href="https://drive.google.com/file/d/1YqBVDB7Qpo_HZzzyOxLqcDtuOCWo7NzY/view?usp=drive_link" target="_blank" rel="noopener">my CV</a>.</p>
+        </div>
         <div class="pub-grid">
           
           <div class="pub-card">
@@ -396,7 +402,6 @@
           </div>
 
         </div>
-       <p class="small" style="margin-top:16px">Full list available in <a href="https://drive.google.com/file/d/1YqBVDB7Qpo_HZzzyOxLqcDtuOCWo7NzY/view?usp=drive_link" target="_blank" rel="noopener">my CV</a>.</p>
       </section>
 
       
