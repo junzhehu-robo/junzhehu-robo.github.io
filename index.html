@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Junzhe Hu | Homepage</title>
+  <meta name="description" content="Personal academic homepage of Junzhe Hu — CMU RI / Soft Machines Lab & RExLab. Robotics, bio-inspired robots, variable stiffness mechanisms, and robot learning." />
+  <meta property="og:title" content="Junzhe Hu | Homepage" />
+  <meta property="og:description" content="Robotics • Soft machines • Aquatic robots • Learning for control" />
+  <meta name="theme-color" content="#0e1116" />
+  <style>
+    :root{
+      --bg:#0e1116; --card:#141922; --text:#e6e6e6; --muted:#aab0b8;
+      --link:#7aa2ff; --accent:#69d2ff; --chip:#1f2633; --border:#263042;
+      --ring: rgba(122,162,255,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 20px 80px}
+    header{display:flex;gap:22px;align-items:center;margin:8px 0 20px}
+    .avatar{
+      width:170px;
+      height:190px;
+      border-radius:24px;
+      background:#222 center/cover no-repeat;
+      flex:0 0 130px;
+      border:1.5px solid var(--border);
+    }
+    h1{font-size:2.05rem;margin:.2rem 0 .3rem}
+    .subtitle{color:var(--muted);margin:.1rem 0 .6rem}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:.6rem 0 .2rem}
+    .chip{background:var(--chip);border:1px solid var(--border);padding:6px 10px;border-radius:999px;
+      color:#d4d9df;font-size:.9rem;transition:transform .15s ease, box-shadow .15s ease}
+    .chip:hover{transform:translateY(-1px);box-shadow:0 0 0 6px var(--ring)}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin:.4rem 0}
+    .links a{display:inline-flex;gap:8px;align-items:center;background:var(--card);
+      border:1px solid var(--border);padding:6px 10px;border-radius:8px;
+      transition:transform .15s ease, box-shadow .15s ease}
+    .links a:hover{transform:translateY(-1px);box-shadow:0 0 0 6px var(--ring);text-decoration:none}
+    main section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 18px;margin:14px 0}
+    h2{font-size:1.25rem;margin:.2rem 0 .8rem}
+    .twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    @media (max-width:900px){.twocol{grid-template-columns:1fr}}
+    .news ul{margin:.2rem 0 0;padding-left:0;list-style:none}
+    .news li{margin:.5rem 0;position:relative;padding-left:28px}
+    .news li::before{content:"🗞️";position:absolute;left:0;top:0}
+    .news li.news-hidden{display:none}
+    .news-toggle{margin-top:12px;padding:8px 16px;background:var(--chip);border:1px solid var(--border);
+      border-radius:8px;color:var(--link);cursor:pointer;display:inline-block;font-size:.95rem;
+      transition:transform .15s ease, box-shadow .15s ease}
+    .news-toggle:hover{transform:translateY(-1px);box-shadow:0 0 0 6px var(--ring)}
+    .pub-grid{display:grid;gap:20px}
+    .pub-card{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start;
+      background:linear-gradient(135deg,#141a24,#12161f);border:1px solid var(--border);
+      border-radius:12px;padding:16px;transition:transform .2s ease, box-shadow .2s ease}
+    .pub-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+    .pub-image{width:280px;height:158px;border-radius:8px;background:#1a2030 center/cover no-repeat;
+      border:1px solid var(--border);overflow:hidden}
+    .pub-image img,.pub-image video{width:100%;height:100%;object-fit:cover}
+    .pub-content{display:flex;flex-direction:column;gap:8px}
+    .pub-title{font-size:1.1rem;font-weight:700;line-height:1.4;color:var(--text)}
+    .pub-authors{color:#c5cdd8;font-size:.95rem}
+    .pub-venue{color:#7aa2ff;font-weight:600;font-size:.95rem}
+    @media (max-width:900px){.pub-card{grid-template-columns:1fr}.pub-image{width:100%;height:200px}}
+    .pub{margin:1rem 0 1.2rem}
+    .pub .title{font-weight:700}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin:.35rem 0}
+    .badge{display:inline-block;background:var(--chip);border:1px solid var(--border);
+      padding:3px 8px;border-radius:7px;font-size:.85rem;transition:transform .15s ease}
+    .badge:hover{transform:translateY(-1px)}
+    .authors{color:#cfd6de}
+    .where{color:#9fb4ff;font-weight:600}
+    .grid{display:grid;gap:12px}
+    .exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+    .edu-card{display:flex;gap:10px;align-items:center;
+      background:linear-gradient(180deg,#171d27,#141a22);border:1px solid var(--border);
+      border-radius:10px;padding:8px 10px;transition:transform .15s ease, box-shadow .15s ease}
+    .edu-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.25)}
+    .edu-logo{width:48px;height:48px;flex-shrink:0;border-radius:6px;background:#1d2533}
+    .edu-info{flex:1;min-width:0}
+    .edu-info .title{font-size:.95rem;font-weight:700;margin-bottom:2px}
+    .edu-info .subtitle{font-size:.82rem;color:var(--muted);margin-bottom:4px}
+    .edu-info .badges{display:flex;flex-wrap:wrap;gap:4px}
+    .edu-info .badge{font-size:.75rem;padding:2px 6px}
+    footer{color:var(--muted);margin-top:20px;text-align:center}
+    .small{font-size:.92rem}
+    .about{grid-column:1/-1}
+    .news{grid-column:1/-1}
+    .h2icon{margin-right:.4rem;font-size:1.1em}
+    .pub-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;flex-wrap:wrap;gap:8px}
+    .pub-header h2{margin:0.2rem 0 0}
+    .pub-header .small{margin:0}
+    @media (max-width:600px){.pub-header{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar" style="background-image:url('Junzhe_Photo_2025.jpg')" aria-label="Portrait of Junzhe Hu"></div>
+      <div>
+        <h1>Junzhe Hu</h1>
+        <div class="subtitle">Master of Science in Robotics · CMU Robotics Institute · Soft Machines Lab & RExLab</div>
+        <div class="chips">
+          <span class="chip">🐟 Bioinspired Robotics</span>
+          <span class="chip">⚙️ Mechatronic Design</span>
+          <span class="chip">🧩 Variable Stiffness</span>
+          <span class="chip">📐 Modeling & Optimization</span>
+          <span class="chip">🌊 FSI Simulation</span>
+          <span class="chip">🧠 Physic Intelligence</span>
+          <span class="chip">👀 Sensing</span>
+          <span class="chip">🤖 Robot Learning</span>
+        </div>
+        <div class="links">
+          <a href="mailto:junzhehu@andrew.cmu.edu" aria-label="Email">✉️ Email</a>
+          <a href="https://scholar.google.com/citations?hl=zh-CN&user=_uTuxYUAAAAJ" target="_blank" rel="noopener">📚 Google Scholar</a>
+          <a href="https://www.linkedin.com/in/junzhe-hu/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="twocol">
+      <!-- About -->
+      <section class="about">
+        <h2><span class="h2icon">🧭</span>About Me</h2>
+  <p>
+    I am an M.S. in Robotics student at the Carnegie Mellon University Robotics Institute, working with the Soft Machines Lab (Carmel Majidi) and RExLab (Zachary Manchester). My research lies at the intersection of bio-inspired robotics, soft materials, and fluid dynamics, with a focus on physical intelligence — how body, materials, and environment can share the work of computation.
+  </p>
+  <p>
+    I develop variable-stiffness aquatic robots, differentiable fluid–structure interaction simulations, and vision-based flow sensing to study how energy and information move between a robot and its surrounding fluid. My long-term goal is to build a general framework where morphology, control, and physics are co-designed, enabling robots that do not just move through their environments, but live with them.
+  </p>
+      </section>
+
+      <!-- Experience -->
+      <section class="about">
+        <h2><span class="h2icon">🏛️</span>Experience</h2>
+        <div class="exp-grid">
+          <div class="edu-card">
+            <div class="edu-logo" style="background:url('CMURI.jpg') center/cover no-repeat"></div>
+            <div class="edu-info">
+              <div class="title">Carnegie Mellon University</div>
+              <div class="subtitle">Graduate RA · RI · Aug 2024 – Present</div>
+              <div class="badges"><span class="badge">🐠 Aquatic robots</span><span class="badge">🌊 FSI</span><span class="badge">🧠 Learning</span></div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-logo" style="background:url('UC.png') center/cover no-repeat"></div>
+            <div class="edu-info">
+              <div class="title">University of Cincinnati</div>
+              <div class="subtitle">Research Assistant · Aug 2023 – May 2024</div>
+              <div class="badges"><span class="badge">🏅 Capstone Award</span><span class="badge">🧩 Variable stiffness</span></div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-logo" style="background:url('EPFL.png') center/cover no-repeat"></div>
+            <div class="edu-info">
+              <div class="title">EPFL (Biorob)</div>
+              <div class="subtitle">Research Assistant · Jan – Aug 2023</div>
+              <div class="badges"><span class="badge">🏥 Medical robotics</span><span class="badge">🖼️ Segmentation</span></div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-logo" style="background:url('INRIA.png') center/cover no-repeat"></div>
+            <div class="edu-info">
+              <div class="title">INRIA</div>
+              <div class="subtitle">Research Assistant · Aug 2023 – Jan 2024</div>
+              <div class="badges"><span class="badge">🧵 Cosserat rod</span><span class="badge">📐 Modeling</span></div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-logo" style="background:url('SIAT.jfif') center/cover no-repeat"></div>
+            <div class="edu-info">
+              <div class="title">SIAT, CAS</div>
+              <div class="subtitle">Research Intern · 2021 – 2022</div>
+              <div class="badges"><span class="badge">🧽 Soft robots</span><span class="badge">🦋 Bio-inspired</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section>
+        <h2><span class="h2icon">🧰</span>Skills</h2>
+        <ul style="margin:.2rem 0">
+          <li><strong>Proficient:</strong> MATLAB/Simulink, Python, C++, SolidWorks, Comsol, PCB Design, LaTeX</li>
+          <li><strong>Skilled:</strong> Julia, Blender, SOFA, PyTorch, Abaqus</li>
+        </ul>
+      </section>
+
+      <!-- Honors -->
+      <section>
+        <h2><span class="h2icon">🏆</span>Honors & Awards</h2>
+        <ul style="margin:.2rem 0">
+          <li>2024 Best Capstone Project Award (UC MechE, 1/130)</li>
+          <li>Chinese Government National Scholarship (0.8% selected)</li>
+          <li>Chongqing University Student Pacesetter (top 0.18%)</li>
+        </ul>
+      </section>
+
+      <!-- News -->
+      <section class="news">
+        <h2><span class="h2icon">📰</span>News</h2>
+        <ul id="newsList">
+          <li><strong>Dec 2025</strong> — Invited to present <em>Spatiotemporal Stiffness Modulation</em> framework at CMU Soft Robotics Seminar.</li>
+          <li><strong>Oct 2025</strong> — Submitted our <em>Spatiotemporal Stiffness Modulation</em> paper to <strong>npj Robotics</strong>.</li>
+          <li><strong>Oct 2025</strong> — Released <strong>Aquarium 2.0</strong> preprint; preparing reinforcement-learning examples for <em>RSS 2026</em> submission.</li>
+          <li><strong>Jul 2025</strong> — <em>Aerial-Aquatic Locomotion Robot with Variable-Stiffness Propulsion Module</em> accepted at <strong>IROS 2025</strong>.</li>
+          
+          <li class="news-hidden"><strong>Apr 2025</strong> — Launched development of a <strong>GelSight-inspired tactile flow sensor</strong> for vortex detection and closed-loop swimming control.</li>
+          <li class="news-hidden"><strong>Feb 2025</strong> — Submitted <em>Reduced-Mode Cosserat Rod Model for Soft Continuum Structures</em> to <strong>Mechanism and Machine Theory</strong>; preprint released.</li>
+          <li class="news-hidden"><strong>Nov 2024</strong> — Built a <strong>variable-stiffness fish-tail prototype</strong> achieving a 42× stiffness range for experimental validation.</li>
+          <li class="news-hidden"><strong>Aug 2024</strong> — Joined <strong>CMU Robotics Institute</strong> as Graduate Research Assistant, working with Soft Machines Lab and REx Lab.</li>
+          <li class="news-hidden"><strong>May 2024</strong> — <strong>Capstone Project Award</strong> (1/130) from University of Cincinnati Mechanical Engineering Department.</li>
+          <li class="news-hidden"><strong>Aug 2023</strong> — Joined <strong>University of Cincinnati</strong> as Research Assistant.</li>
+          <li class="news-hidden"><strong>Aug 2023</strong> — Published <em>TransMatch: A Semi-supervised Medical Image Segmentation Framework</em>. Achieved +3.38% DSC over SOTA on Pancreas-CT and LA datasets.</li>
+          <li class="news-hidden"><strong>Jan 2023</strong> — Joined <strong>EPFL Biorob Lab</strong> as Research Assistant.</li>
+          <li class="news-hidden"><strong>Jun 2022</strong> — Published <em>Underwater Robot with Flexible Passive Joint Paddle</em> on Biomimetics.</li>
+          <li class="news-hidden"><strong>May 2022</strong> — Developed a <em>Rigid–Flexible Coupled Robotic Fish with Anal Fin Optimization</em> (SIAT CAS). Demonstrated 65% reduction in head oscillation via CPG-based fin coordination.</li>
+          <li class="news-hidden"><strong>Aug 2021</strong> — Published <em>Sloth-inspired UAV Perching and Climbing Mechanism</em> on IEEE ROBIO 2022.</li>
+        </ul>
+        <div class="news-toggle" onclick="toggleNews()">
+          <span id="newsToggleText">▼ Show more</span>
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section class="about">
+        <div class="pub-header">
+          <h2><span class="h2icon">📚</span>Selected Publications</h2>
+          <p class="small">Full list available in <a href="" target="_blank" rel="noopener">my CV</a>.</p>
+        </div>
+        <div class="pub-grid">
+          
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('upstream_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">Against the Current: Self-Organized Upstream Undulatory Swimming Via Multisensory Feedback and Policy Learning</div>
+              <div class="pub-authors"><strong>Junzhe Hu</strong>, Jeong Hun Lee, Zeynep Temel, Carmel Majidi, Zachary Manchester</div>
+              <div class="pub-venue">In Progress</div>
+              <div class="badges"><span class="badge">🔬 In Progress</span></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+  <div class="pub-image">
+    <video
+      src="vortex_demo.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
+  </div>
+  <div class="pub-content">
+    <div class="pub-title">Vortex-Induced Propulsion: Revealing Physical Intelligence in Upstream Robotic Swimming</div>
+    <div class="pub-authors">Jeong Hun Lee*, Junzhe Hu* (Co-first), S. Kazi, Carmel Majidi, Mitul Luhar, Zachary Manchester</div>
+    <div class="pub-venue">Proceedings of the National Academy of Sciences (PNAS), 2025 (Under Review)</div>
+    <div class="badges"><span class="badge">⏳ Under Review</span></div>
+  </div>
+</div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('swimgym_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">SwimGym: A Unified Multiphysics Framework for Strongly Coupled Fluid–Robot Simulation and Training</div>
+              <div class="pub-authors"><strong>Junzhe Hu*</strong> (Co-first), Jeong Hun Lee*, S. Kwok, G. Sue, Carmel Majidi, Zachary Manchester</div>
+              <div class="pub-venue">RSS 2026 (In Submission)</div>
+              <div class="badges"><span class="badge">📤 In Submission</span></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('viflow_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">Vi-Flow: A Vision based Whisker-Inspired Sensor for Flow Sensing</div>
+              <div class="pub-authors"><strong>Junzhe Hu</strong>, Yuxuan Wen, G. Sue, Jeong Hun Lee, Zeynep Temel, Zac Manchester, Carmel Majidi</div>
+              <div class="pub-venue">IEEE RA-L, 2026 (Under Review)</div>
+              <div class="badges"><span class="badge">⏳ Under Review</span></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('unified_framework_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">A Unified Framework for Simulating Strongly-Coupled Fluid-Robot Multiphysics</div>
+              <div class="pub-authors">Jeong Hun Lee, <strong>Junzhe Hu</strong>, S. Kwok, Carmel Majidi, Zachary Manchester</div>
+              <div class="pub-venue">IEEE Transactions on Robotics, 2025 (Under Review)</div>
+              <div class="badges"><a class="badge" href="https://arxiv.org/abs/2506.05012">🔗 Preprint</a></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('sma_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">Learning-based Control of Multi-axis Shape Memory Alloy Actuated Soft Robotic Platform</div>
+              <div class="pub-authors">Guo Ning Sue, Richard Desatnik, <strong>Junzhe Hu</strong>, Philip LeDuc, Carmel Majidi</div>
+              <div class="pub-venue">Advanced Intelligent Systems, 2025 (Under Review)</div>
+              <div class="badges"><span class="badge">⏳ Under Review</span></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('stifin_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">Spatiotemporal Stiffness Modulation for Efficient Aquatic Robot Locomotion</div>
+              <div class="pub-authors"><strong>Junzhe Hu*</strong>, J. Lee*, T. Wu, G. Sue, J. Liao, Zackory Erickson, Zachary Manchester, Carmel Majidi</div>
+              <div class="pub-venue">npj Robotics, 2025 (Under Reviewed)</div>
+              <div class="badges"><a class="badge" href="https://drive.google.com/file/d/1eB64hPmAu5PqGYIYT3ZsHRdi-6jeMspx/view?usp=sharing">🔗 Paper</a></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('opensource_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">An Open-Source Robotics Platform for Bio-Inspired Swimming Research</div>
+              <div class="pub-authors"><strong>Junzhe Hu</strong>, J. Lee, S. Kwok, G. Sue, Carmel Majidi, Zachary Manchester</div>
+              <div class="pub-venue">ICRA 2025 Workshop & CoRL 2025 Workshops</div>
+              <div class="badges">
+                <a class="badge" href="https://arxiv.org/abs/2506.05012">🔗 ICRA</a>
+                <a class="badge" href="https://openreview.net/forum?id=n5F9Bzop7H">🔗 CoRL-1</a>
+                <a class="badge" href="https://openreview.net/forum?id=Lqsfkyf3N0">🔗 CoRL-2</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('aerial_aquatic_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">A Novel Aerial-Aquatic Locomotion Robot with Variable Stiffness Propulsion Module</div>
+              <div class="pub-authors"><strong>Junzhe Hu</strong>, Pengyu Chen, Tianxiang Feng, Yuxuan Wen, Ke Wu, Janet Dong</div>
+              <div class="pub-venue">IEEE IROS 2025</div>
+              <div class="badges"><a class="badge" href="https://arxiv.org/abs/2409.09572">🔗 Paper</a></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('cosserat_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">Kinetostatic Modeling of Compliant Mechanisms via Reduced Mode Cosserat Rod Model</div>
+              <div class="pub-authors">Ke Wu, X. Li, W. W, <strong>J. Hu</strong>, P. C., S. Z., G. Z. et al.</div>
+              <div class="pub-venue">Mechanism and Machine Theory, 2025</div>
+              <div class="badges"><a class="badge" href="https://www.researchgate.net/publication/375802215_Kinetostatic_Modeling_of_Compliant_Mechanisms_Via_Reduced-Mode_Cosserat_Rod_Model">🔗 Paper</a></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('medical_seg_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">Expanding and Rectifying Pseudo-Label Perturbation Space for Semi-Supervised Medical Image Segmentation</div>
+              <div class="pub-authors">Y. Wen, <strong>J. Hu</strong>, E. Roussinova, Mohamed Bouri</div>
+              <div class="pub-venue">WACV 2026</div>
+              <div class="badges"><span class="badge">📄 Accepted</span></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('paddle_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">Design and Reality-Based Modeling Optimization of a Flexible Passive Joint Paddle for Swimming Robotics</div>
+              <div class="pub-authors"><strong>Junzhe Hu</strong>, Y. Xu, P. Chen, F. Xie, H. Li, Kai He</div>
+              <div class="pub-venue">Biomimetics, 2024</div>
+              <div class="badges"><a class="badge" href="https://www.researchgate.net/publication/377535455_Design_and_Reality-Based_Modeling_Optimization_of_a_Flexible_Passive_Joint_Paddle_for_Swimming_Robots">🔗 Paper</a></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('loon_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">A Novel Multiple Synchronous Compliant and Passive Propellers Inspired by Loons for Swimming Robot</div>
+              <div class="pub-authors">Yaohui Xu, <strong>Junzhe Hu</strong>, J. Song, H. Li, Q. Zuo, K. He</div>
+              <div class="pub-venue">IEEE ROBIO 2022</div>
+              <div class="badges"><a class="badge" href="https://www.researchgate.net/publication/367263973_A_Novel_Multiple_Synchronous_Compliant_and_Passive_Propeller_Inspired_by_Loons_for_Swimming_Robot">🔗 Paper</a></div>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-image" style="background-image:url('sloth_thumb.jpg')">
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">Design and Experiment of a Sloth-inspired UAV Perching Climbing Grasping Mechanism</div>
+              <div class="pub-authors"><strong>Junzhe Hu</strong>, P. Chen, H. Wang, X. Deng, L. Bai</div>
+              <div class="pub-venue">IEEE ROBIO 2022</div>
+              <div class="badges"><a class="badge" href="https://www.researchgate.net/publication/367265172_Design_and_Experiment_of_a_Sloth-inspired_UAV_Perching_Climbing_Grasping_Mechanism">🔗 Paper</a></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      
+    </main>
+
+    <footer class="small">
+      <div>Last updated <span id="updated"></span>. Design by Junzhe Hu.</div>
+    </footer>
+  </div>
+
+  <script>
+    const d = new Date();
+    const fmt = d.toLocaleDateString(undefined,{year:'numeric',month:'short'});
+    document.getElementById('updated').textContent = fmt;
+
+    // Toggle news items
+    function toggleNews() {
+      const hiddenItems = document.querySelectorAll('.news-hidden');
+      const toggleText = document.getElementById('newsToggleText');
+      const isHidden = hiddenItems[0].style.display === 'none' || hiddenItems[0].style.display === '';
+      
+      hiddenItems.forEach(item => {
+        item.style.display = isHidden ? 'block' : 'none';
+      });
+      
+      toggleText.textContent = isHidden ? '▲ Show less' : '▼ Show more';
+    }
+  </script>
+</body>
+</html>
