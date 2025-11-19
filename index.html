@@ -162,7 +162,7 @@
     }
     .news-toggle:hover { color: var(--accent); }
 
-    /* Experience / Education Cards */
+    /* Experience / Education Cards - 修复校徽显示 */
     .edu-card {
       display: flex; gap: 14px;
       background: var(--card-bg);
@@ -175,7 +175,14 @@
     }
     .edu-card:hover { transform: translateX(4px); border-color: var(--text-muted); }
     .edu-logo {
-      width: 48px; height: 48px; border-radius: 8px; background: #000; flex-shrink: 0;
+      width: 48px; 
+      height: 48px; 
+      border-radius: 8px; 
+      background: #000; 
+      flex-shrink: 0;
+      background-size: contain;  /* 修复：确保图片完整显示 */
+      background-position: center;  /* 修复：图片居中 */
+      background-repeat: no-repeat;  /* 修复：防止图片重复 */
     }
     .edu-info .title { font-weight: 700; font-size: 0.95rem; color: #fff; }
     .edu-info .subtitle { font-size: 0.85rem; color: var(--text-muted); }
@@ -283,9 +290,9 @@
 
         <div class="links">
           <a href="mailto:junzhehu@andrew.cmu.edu">✉️ Email</a>
-          <a href="https://scholar.google.com" target="_blank">📚 Scholar</a>
-          <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
-          <a href="#" target="_blank">📄 CV</a>
+          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">📚 Scholar</a>
+          <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">🔗 LinkedIn</a>
+          <a href="cv.pdf" target="_blank">📄 CV</a>
         </div>
       </div>
     </header>
@@ -325,11 +332,12 @@
         <section class="pubs">
           <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
             <h2>Selected Publications</h2>
-            <a href="#" style="font-size:0.9rem">View Full List →</a>
+            <a href="publications.html" style="font-size:0.9rem">View Full List →</a>
           </div>
 
           <div class="pub-grid">
             
+            <!-- Publication 1: In Progress -->
             <div class="pub-card">
               <div class="pub-image">
                 <video src="hydroself.mp4" autoplay muted loop playsinline></video>
@@ -344,6 +352,7 @@
               </div>
             </div>
 
+            <!-- Publication 2: Under Review -->
             <div class="pub-card">
               <div class="pub-image">
                 <div style="width:100%;height:100%;background:linear-gradient(45deg, #1e293b, #0f172a);"></div>
@@ -358,6 +367,7 @@
               </div>
             </div>
 
+            <!-- Publication 3: IROS 2025 - 添加实际链接 -->
             <div class="pub-card">
               <div class="pub-image" style="background-image:url('aerial_aquatic_thumb.jpg')"></div>
               <div class="pub-content">
@@ -365,8 +375,10 @@
                 <div class="pub-authors"><strong>Junzhe Hu</strong>, P. Chen, T. Feng, Y. Wen, K. Wu, J. Dong</div>
                 <div class="pub-venue">IEEE IROS 2025</div>
                 <div class="badges">
-                  <a href="#" class="badge">📄 Paper</a>
-                  <a href="#" class="badge">🎥 Video</a>
+                  <!-- 修复：添加实际PDF链接，请替换为你的实际文件路径 -->
+                  <a href="papers/iros2025_aerial_aquatic.pdf" class="badge" target="_blank">📄 Paper</a>
+                  <!-- 修复：添加实际视频链接，请替换为你的实际文件路径或YouTube链接 -->
+                  <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" class="badge" target="_blank">🎥 Video</a>
                 </div>
               </div>
             </div>
@@ -454,8 +466,7 @@
     function toggleNews() {
       const hiddenItems = document.querySelectorAll('.news-hidden');
       const toggleText = document.getElementById('newsToggleText');
-      const isHidden = hiddenItems[0].style.display === 'block'; // Logic inverted for smoother check default
-
+      
       // Determine state based on current style
       const currentlyVisible = hiddenItems[0].style.display === 'block';
       
