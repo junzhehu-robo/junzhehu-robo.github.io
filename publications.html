@@ -7,696 +7,532 @@
   <meta name="description" content="Complete list of publications by Junzhe Hu" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg: #0b111a;
-      --card-bg: #161b22;
-      --card-border: #30363d;
-      --text-main: #c9d1d9;
-      --text-muted: #8b949e;
-      --accent: #58a6ff;
-      --accent-hover: #79c0ff;
-      --tag-bg: rgba(56, 139, 253, 0.15);
-      --tag-text: #58a6ff;
+      --bg: #0a0e14;
+      --bg-elevated: #111820;
+      --card-bg: #151c27;
+      --card-border: #1e2a3a;
+      --card-border-hover: #2d4158;
+      --text-main: #c5cdd8;
+      --text-muted: #6e7f94;
+      --text-bright: #e8ecf1;
+      --accent: #4d9de6;
+      --accent-soft: rgba(77,157,230,0.12);
+      --accent-hover: #6bb3f0;
+      --green: #3fb950;
+      --yellow: #d4a72c;
+      --purple: #a78bfa;
+      --orange: #f0883e;
+      --mono: 'JetBrains Mono', monospace;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
-      margin: 0; padding: 0;
+    html {
       background: var(--bg);
       color: var(--text-main);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px; line-height: 1.65;
       scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--accent); text-decoration: none; transition: all 0.2s; }
-    a:hover { color: var(--accent-hover); text-decoration: underline; }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent-hover); }
+    strong { color: var(--text-bright); font-weight: 600; }
 
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-
-    /* 顶部导航栏 */
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 48px;
-      padding-bottom: 20px;
+    /* NAV */
+    .topnav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,14,20,0.82);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--card-border);
     }
-
-    .nav-brand {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fff;
+    .topnav-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 28px;
     }
+    .nav-brand { font-weight: 700; font-size: 1.05rem; color: var(--text-bright); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.92rem; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-    }
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
 
-    .nav-links a {
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .nav-links a.active {
-      color: var(--accent);
-    }
-
-    /* 页面标题 */
-    .page-header {
-      margin-bottom: 40px;
-    }
-
+    /* HEADER */
+    .page-header { padding: 48px 0 32px; }
     .page-header h1 {
-      font-size: 2.5rem;
-      margin: 0 0 12px 0;
-      color: #fff;
-      letter-spacing: -0.02em;
+      font-size: 2.4rem; color: #fff; letter-spacing: -0.03em; margin-bottom: 8px;
     }
+    .page-header p { color: var(--text-muted); font-size: 1.05rem; }
 
-    .page-header p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      margin: 0;
-    }
-
-    /* 统计信息 */
+    /* STATS */
     .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 40px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 12px; margin-bottom: 40px;
     }
-
     .stat-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      padding: 16px 18px; border-radius: 10px; text-align: center;
     }
+    .stat-num { font-size: 1.8rem; font-weight: 700; color: var(--accent); font-family: var(--mono); }
+    .stat-lbl { color: var(--text-muted); font-size: 0.85rem; margin-top: 2px; }
 
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    .stat-label {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    /* 年份分组 */
-    .year-section {
-      margin-bottom: 48px;
-    }
-
+    /* YEAR SECTION */
+    .year-section { margin-bottom: 48px; }
     .year-header {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 24px;
-      padding-bottom: 12px;
+      font-size: 1.5rem; font-weight: 700; color: var(--accent);
+      margin-bottom: 20px; padding-bottom: 10px;
       border-bottom: 2px solid var(--card-border);
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      display: flex; align-items: center; gap: 10px;
     }
+    .year-count { font-size: 0.9rem; font-weight: 400; color: var(--text-muted); }
 
-    .year-count {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text-muted);
-    }
-
-    /* Publication 卡片 */
-    .pub-list {
-      display: grid;
-      gap: 24px;
-    }
+    /* PUB CARDS */
+    .pub-list { display: grid; gap: 20px; }
 
     .pub-card {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 20px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: grid; grid-template-columns: 220px 1fr;
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 10px; overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
     }
-
     .pub-card:hover {
-      border-color: var(--text-muted);
-      box-shadow: 0 10px 40px -10px rgba(0,0,0,0.6);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 8px 32px -8px rgba(0,0,0,0.5);
       transform: translateY(-2px);
     }
 
     .pub-image {
-      height: 100%;
-      min-height: 180px;
-      background: #000 center/cover no-repeat;
-      position: relative;
+      min-height: 160px; background: var(--bg-elevated) center/cover no-repeat;
     }
+    .pub-image video, .pub-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .pub-image video, .pub-image img {
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      display: block;
-    }
-
-    .pub-content {
-      padding: 20px 20px 20px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .pub-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.4;
-      margin-bottom: 4px;
-    }
-
-    .pub-authors {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .pub-venue {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-top: 4px;
-    }
+    .pub-content { padding: 16px 18px; display: flex; flex-direction: column; gap: 5px; }
+    .pub-title { font-size: 1.02rem; font-weight: 700; color: #fff; line-height: 1.4; }
+    .pub-authors { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+    .pub-venue { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-top: 2px; }
 
     .pub-abstract {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-top: 8px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
+      font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;
+      margin-top: 6px; max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease;
     }
-
-    .pub-card.expanded .pub-abstract {
-      max-height: 500px;
-    }
+    .pub-card.expanded .pub-abstract { max-height: 400px; }
 
     .abstract-toggle {
-      font-size: 0.85rem;
-      color: var(--accent);
-      cursor: pointer;
-      margin-top: 4px;
-      user-select: none;
+      font-size: 0.82rem; color: var(--accent); cursor: pointer;
+      margin-top: 4px; user-select: none; font-family: var(--mono);
     }
+    .abstract-toggle:hover { color: var(--accent-hover); }
 
-    .abstract-toggle:hover {
-      color: var(--accent-hover);
-    }
-
-    /* Badges */
-    .badges {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
-      flex-wrap: wrap;
-    }
-
+    .badges { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
     .badge {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 6px;
-      background: var(--card-border);
-      color: var(--text-main);
-      font-size: 0.8rem;
-      font-weight: 500;
-      border: 1px solid transparent;
-      text-decoration: none;
+      display: inline-block; padding: 3px 9px; border-radius: 5px;
+      background: var(--card-border); color: var(--text-main);
+      font-size: 0.78rem; font-weight: 500;
+      border: 1px solid transparent; text-decoration: none;
+      transition: all 0.2s;
     }
+    .badge:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); text-decoration: none; }
 
-    .badge:hover {
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      border-color: var(--tag-text);
-      text-decoration: none;
-    }
-
-    /* 状态标签 */
-    .status-badge {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-left: 8px;
-    }
-
-    .status-inprogress {
-      background: rgba(234, 179, 8, 0.15);
-      color: #fbbf24;
-    }
-
-    .status-review {
-      background: rgba(139, 92, 246, 0.15);
-      color: #a78bfa;
-    }
-
-    .status-published {
-      background: rgba(34, 197, 94, 0.15);
-      color: #4ade80;
-    }
-
-    .status-preprint {
-      background: rgba(59, 130, 246, 0.15);
-      color: #60a5fa;
-    }
-
-    /* 响应式 */
-    @media (max-width: 768px) {
-      .pub-card {
-        grid-template-columns: 1fr;
-      }
-      .pub-content {
-        padding: 0 16px 16px 16px;
-      }
-      .pub-image {
-        height: 200px;
-        min-height: 200px;
-      }
-      .nav {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
-      }
-      .stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    strong { color: #fff; font-weight: 600; }
+    .status { font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+    .st-review { background: rgba(167,139,250,0.12); color: var(--purple); }
+    .st-accept { background: rgba(63,185,80,0.12); color: var(--green); }
+    .st-prog { background: rgba(212,167,44,0.12); color: var(--yellow); }
+    .st-pub { background: rgba(63,185,80,0.12); color: var(--green); }
+    .st-workshop { background: rgba(240,136,62,0.12); color: var(--orange); }
 
     footer {
-      margin-top: 60px;
-      padding-top: 20px;
+      margin-top: 60px; padding: 20px 0;
       border-top: 1px solid var(--card-border);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      text-align: center; color: var(--text-muted); font-size: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+      .pub-card { grid-template-columns: 1fr; }
+      .pub-content { padding: 12px 14px 14px; }
+      .pub-image { height: 180px; min-height: 180px; }
+      .topnav-inner { flex-direction: column; gap: 10px; }
+      .stats { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    
-    <!-- 导航栏 -->
-    <nav class="nav">
+
+  <nav class="topnav">
+    <div class="topnav-inner">
       <div class="nav-brand">Junzhe Hu</div>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="publications.html" class="active">Publications</a>
         <a href="mailto:junzhehu@andrew.cmu.edu">Contact</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- 页面标题 -->
+  <div class="wrap">
+
     <div class="page-header">
       <h1>Publications</h1>
-      <p>Complete list of research publications, preprints, and works in progress</p>
+      <p>Peer-reviewed papers, preprints, and works in progress. <strong>*</strong> = equal contribution.</p>
     </div>
 
-    <!-- 统计信息 -->
     <div class="stats">
       <div class="stat-card">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Total Publications</div>
+        <div class="stat-num">14</div>
+        <div class="stat-lbl">Total Publications</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">4</div>
-        <div class="stat-label">First Author</div>
+        <div class="stat-num">7</div>
+        <div class="stat-lbl">First / Co-first Author</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">3</div>
-        <div class="stat-label">Under Review</div>
+        <div class="stat-num">5</div>
+        <div class="stat-lbl">Under Review</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">2</div>
-        <div class="stat-label">In Progress</div>
+        <div class="stat-num">2</div>
+        <div class="stat-lbl">In Progress</div>
       </div>
     </div>
 
-    <!-- 2025 Publications -->
+    <!-- ============================================== -->
+    <!-- 2025–2026 -->
+    <!-- ============================================== -->
     <div class="year-section">
-      <h2 class="year-header">2025 <span class="year-count">(6 publications)</span></h2>
+      <h2 class="year-header">2025–2026 <span class="year-count">(11 papers)</span></h2>
       <div class="pub-list">
 
-        <!-- In Progress 1 -->
+        <!-- 1. npj Robotics (Accepted) -->
         <div class="pub-card">
-          <div class="pub-image">
-            <video src="hydroself.mp4" autoplay muted loop playsinline></video>
-          </div>
+          <div class="pub-image" style="background:linear-gradient(135deg,#0c4a6e,#164e63);"></div>
           <div class="pub-content">
             <div class="pub-title">
-              Against the Current: Self-Organized Upstream Undulatory Swimming Via Multisensory Feedback
-              <span class="status-badge status-inprogress">In Progress</span>
+              Spatiotemporal Stiffness Modulation for Efficient Aquatic Robot Locomotion
+              <span class="status st-accept">Accepted</span>
             </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Jungha Lee, Zherong Temel, Carmel Majidi, Zachary Manchester</div>
-            <div class="pub-venue">In Preparation (2025)</div>
+            <div class="pub-authors"><strong>J. Hu</strong>, J. Lee, T. Wu, G. Sue, J. Liao, Z. Erickson, Z. Manchester, C. Majidi</div>
+            <div class="pub-venue">npj Robotics, 2026</div>
             <div class="pub-abstract">
-              We present a bio-inspired control framework that enables autonomous upstream swimming in robotic fish through multisensory feedback integration. By combining flow sensing, proprioception, and visual odometry, our system achieves self-organized rheotaxis behavior without explicit flow models.
+              Designed a modular multi-link mechanism implementing spatiotemporal stiffness modulation through sliding laminate flexures. Developed a variational dynamics model with hydrodynamic forces and applied trajectory optimization to identify optimal stiffness patterns. Spatiotemporal stiffness modulation increased thrust by 89% in drag-based paddling and 19% in body–caudal-fin swimming, validated through robotic experiments.
             </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
             <div class="badges">
-              <span class="badge">🔬 In Progress</span>
+              <a href="https://drive.google.com/file/d/1MGUCGkq_2HPAL21sU5o2qaWzqa-F2ZyQ/view" class="badge" target="_blank">📄 Paper</a>
             </div>
           </div>
         </div>
 
-        <!-- Under Review 1 -->
+        <!-- 2. RSS 2026 (Under Review) -->
         <div class="pub-card">
-          <div class="pub-image">
-            <div style="width:100%;height:100%;background:linear-gradient(45deg, #1e293b, #0f172a);"></div>
-          </div>
+          <div class="pub-image" style="background:linear-gradient(135deg,#1e1b4b,#312e81);"></div>
           <div class="pub-content">
             <div class="pub-title">
-              Vortex-Induced Propulsion: Revealing Physical Intelligence in Upstream Robotic Swimming
-              <span class="status-badge status-review">Under Review</span>
+              Realizing Robotic Swimming with Strongly-Coupled Fluid-Robot Multiphysics
+              <span class="status st-review">Under Review</span>
             </div>
-            <div class="pub-authors">Jungha Lee*, <strong>Junzhe Hu*</strong>, Sarvesh Kazi, Carmel Majidi, Mitul Luhar, Zachary Manchester (*equal contribution)</div>
-            <div class="pub-venue">PNAS (Under Review, 2025)</div>
+            <div class="pub-authors"><strong>J. Hu*</strong>, J. H. Lee*, C. Majidi, Z. Manchester</div>
+            <div class="pub-venue">Robotics: Science and Systems (RSS), 2026</div>
             <div class="pub-abstract">
-              This work uncovers the mechanism of vortex-induced propulsion in upstream swimming, demonstrating how robots can exploit environmental flow structures for energy-efficient locomotion. We show that physical intelligence emerges from morphological computation without explicit control strategies.
+              Formulated coupled robot and incompressible Navier–Stokes dynamics from a unified Lagrangian and derived a variational integrator for strongly-coupled fluid–robot multiphysics. Developed an integral-form immersed boundary method resolving singularities in classical formulations. Built a 6-link eel robot achieving 75% reduction in trajectory prediction error vs. SPH baselines, with successful sim-to-real transfer of C-start and swimming gaits.
             </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
+            <div class="badges">
+              <a href="https://drive.google.com/drive/folders/1YacPtxmqXjM4Ed6mYpAPxMvq7ng3v6qk" class="badge" target="_blank">📄 Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. PNAS (Under Review) -->
+        <div class="pub-card">
+          <div class="pub-image" style="background:linear-gradient(135deg,#1a1a2e,#16213e);"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              Vortex-Induced Propulsion in Upstream Robotic Swimming
+              <span class="status st-review">Under Review</span>
+            </div>
+            <div class="pub-authors">J. H. Lee*, <strong>J. Hu*</strong>, S. Kazi, M. Luhar, C. Majidi, Z. Manchester</div>
+            <div class="pub-venue">Proceedings of the National Academy of Sciences (PNAS)</div>
+            <div class="pub-abstract">
+              Reproduced passive propulsion in vortex wakes using a segmented "dead-fish" robot. Studied how flexible passive bodies synchronize with oncoming vortex streets to extract flow energy and propel upstream. Conducted gradient-based design optimization of spatial stiffness distributions to maximize upstream swimming.
+            </div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
             <div class="badges">
               <span class="badge">⏳ Under Review</span>
             </div>
           </div>
         </div>
 
-        <!-- Under Review 2 -->
+        <!-- 4. Adv. Materials (Under Review) -->
         <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <div class="pub-image" style="background:linear-gradient(135deg,#3b0764,#581c87);"></div>
           <div class="pub-content">
             <div class="pub-title">
-              Aquarium 2.0: High-Fidelity Differentiable Fluid-Structure Interaction for Aquatic Robotics
-              <span class="status-badge status-preprint">Preprint</span>
+              Printable Thermoelectric Ink for Self-Healing, Thermally Responsive Soft Devices
+              <span class="status st-review">Under Review</span>
             </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Zherong Temel, Carmel Majidi, Zachary Manchester</div>
-            <div class="pub-venue">arXiv Preprint (Oct 2025)</div>
+            <div class="pub-authors">H. Kim, <strong>J. Hu</strong>, D. Patel, G. Sue, Y. Hu, J. Seok, Z. Bai, M. Zadan, M. Vinciguerra, G. Lee, V. Webster-Wood, T. Cohen-Karni, D. Shah*, C. Majidi*</div>
+            <div class="pub-venue">Advanced Materials, 2025</div>
             <div class="pub-abstract">
-              We introduce Aquarium 2.0, a differentiable simulation framework that enables gradient-based optimization of aquatic robot designs. The simulator combines high-fidelity fluid dynamics with soft body mechanics, enabling co-design of morphology and control.
+              Developed printable thermoelectric ink for self-healing, thermally responsive soft devices combining shape memory alloys with shape memory polymers for programmable bending/twisting with power-free locking.
             </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
             <div class="badges">
-              <a href="https://arxiv.org/abs/XXXX.XXXXX" class="badge" target="_blank">📄 arXiv</a>
-              <a href="#" class="badge" target="_blank">💻 Code</a>
+              <a href="https://drive.google.com/file/d/1u_VFhQlzDt-RAFxr4F66Vdu444iM7lMO/view" class="badge" target="_blank">📄 Paper</a>
             </div>
           </div>
         </div>
 
-        <!-- IROS 2025 -->
+        <!-- 5. IROS 2026 (Under Review) -->
         <div class="pub-card">
-          <div class="pub-image" style="background-image:url('aerial_aquatic_thumb.jpg')"></div>
+          <div class="pub-image" style="background:linear-gradient(135deg,#0e3a2f,#1a4731);"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              Tendon-Driven Continuum Robot with Modular Stiffness and In-Situ Self Pose Estimation
+              <span class="status st-review">Under Review</span>
+            </div>
+            <div class="pub-authors">G. Sue*, <strong>J. Hu*</strong>, Z. Cao, X. Bu, C. Majidi</div>
+            <div class="pub-venue">IEEE IROS, 2026</div>
+            <div class="pub-abstract">
+              Designed a tendon-driven continuum robot featuring modular variable stiffness and in-situ self pose estimation for adaptive manipulation in unstructured environments.
+            </div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
+            <div class="badges">
+              <span class="badge">⏳ Under Review</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Adv. Intelligent Systems (Under Review) -->
+        <div class="pub-card">
+          <div class="pub-image" style="background:linear-gradient(135deg,#1e293b,#334155);"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              Learning-based Control of Multi-axis Shape Memory Alloy Actuated Soft Robotic Platform
+              <span class="status st-review">Under Review</span>
+            </div>
+            <div class="pub-authors">G. Sue, R. Desatnik, <strong>J. Hu</strong>, P. LeDuc, C. Majidi</div>
+            <div class="pub-venue">Advanced Intelligent Systems, 2025</div>
+            <div class="badges">
+              <span class="badge">⏳ Under Review</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Mechanism and Machine Theory (Accepted) -->
+        <div class="pub-card">
+          <div class="pub-image" style="background:linear-gradient(135deg,#292524,#44403c);"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              Kinetostatic Modeling of Compliant Mechanisms via Reduced Mode Cosserat Rod Model
+              <span class="status st-accept">Accepted</span>
+            </div>
+            <div class="pub-authors">K. Wu, X. Li, W. Wu, <strong>J. Hu</strong>, P. Chen, R. Cheng, Q. Sun, et al., G. Zheng</div>
+            <div class="pub-venue">Mechanism and Machine Theory, 2026</div>
+            <div class="pub-abstract">
+              Downscaled the Cosserat Rod model for analysis of forces and deformations in plane beams. Demonstrated enhanced computational efficiency and maintained accuracy compared to TBCM and NEB models through FEM validation in COMSOL.
+            </div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
+            <div class="badges">
+              <a href="https://download.ssrn.com/mechmt/cb11b79a-c3fc-4566-b5ab-985b69ee8497-meca.pdf" class="badge" target="_blank">📄 Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. IROS 2025 -->
+        <div class="pub-card">
+          <div class="pub-image" style="background-image:url('aerial_aquatic_thumb.jpg');"></div>
           <div class="pub-content">
             <div class="pub-title">
               A Novel Aerial-Aquatic Locomotion Robot with Variable Stiffness Propulsion Module
-              <span class="status-badge status-published">Published</span>
+              <span class="status st-pub">Published</span>
             </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Peng Chen, Tianyi Feng, Yizhou Wen, Kunyang Wu, Jie Dong</div>
-            <div class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)</div>
+            <div class="pub-authors"><strong>J. Hu</strong>, P. Chen, T. Feng, Y. Wen, K. Wu, J. Dong</div>
+            <div class="pub-venue">IEEE IROS 2025 (Oral Presentation)</div>
             <div class="pub-abstract">
-              We present a hybrid aerial-aquatic robot capable of seamless transition between flight and swimming. The key innovation is a variable stiffness propulsion module that adapts to different fluid environments, enabling efficient locomotion in both air and water.
+              Designed and fabricated a robot capable of both flying and swimming using low-melting-point alloy joints that switch between rigid (aerial) and compliant (aquatic) states. Achieved 77 mm/s swimming speed and 34% propulsion efficiency while retaining flight capability.
             </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
             <div class="badges">
-              <a href="papers/iros2025_aerial_aquatic.pdf" class="badge" target="_blank">📄 Paper</a>
-              <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" class="badge" target="_blank">🎥 Video</a>
-              <a href="#" class="badge" target="_blank">💻 Code</a>
+              <a href="https://ieeexplore.ieee.org/document/11247420" class="badge" target="_blank">📄 Paper</a>
+              <a href="#" class="badge" target="_blank">🎥 Video</a>
             </div>
           </div>
         </div>
 
-        <!-- Preprint 1 -->
+        <!-- 9. IEEE T-MI -->
         <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="pub-image" style="background:linear-gradient(135deg,#4a1942,#2d1b69);"></div>
           <div class="pub-content">
             <div class="pub-title">
-              Reduced-Mode Cosserat Rod Model for Real-Time Soft Robot Simulation
-              <span class="status-badge status-preprint">Preprint</span>
+              Expanding and Rectifying Pseudo-Label Perturbation Space for Semi-Supervised Medical Image Segmentation
+              <span class="status st-pub">Published</span>
             </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Zherong Temel, Zachary Manchester</div>
-            <div class="pub-venue">arXiv Preprint (Feb 2025)</div>
+            <div class="pub-authors"><strong>J. Hu</strong>, Y. Wen, E. Roussinova, M. Bouri</div>
+            <div class="pub-venue">IEEE Transactions on Medical Imaging, 2025</div>
             <div class="pub-abstract">
-              We develop a reduced-order Cosserat rod model that achieves real-time simulation of soft continuum robots. By exploiting geometric structure and modal decomposition, our method enables interactive control and planning for soft manipulators.
+              Developed TransMatch, a semi-supervised medical image segmentation framework addressing pseudo-label noise. Integrated expanded perturbation and consistency regularization with transitional augmentations, achieving 3.38% DSC improvement over SOTA on Pancreas-CT and LA datasets.
             </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
             <div class="badges">
-              <a href="https://arxiv.org/abs/XXXX.XXXXX" class="badge" target="_blank">📄 arXiv</a>
-              <a href="#" class="badge" target="_blank">💻 Code</a>
+              <a href="https://drive.google.com/file/d/1XIzOFnWbe76Z6WX7-l-z-U77fD1vB0x6/view" class="badge" target="_blank">📄 Paper</a>
             </div>
           </div>
         </div>
 
-        <!-- In Progress 2 -->
+        <!-- 10. ICRA + CoRL Workshops -->
         <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+          <div class="pub-image" style="background:linear-gradient(135deg,#7c2d12,#9a3412);"></div>
           <div class="pub-content">
             <div class="pub-title">
-              GelSight-Inspired Tactile Flow Sensing for Underwater Robots
-              <span class="status-badge status-inprogress">In Progress</span>
+              A Unified Framework for Posing Strongly-Coupled Multiphysics for Robotics Simulation
+              <span class="status st-workshop">Workshop</span>
             </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Edward Adelson, Carmel Majidi</div>
-            <div class="pub-venue">In Preparation (2025)</div>
+            <div class="pub-authors">J. Lee, <strong>J. Hu</strong>, S. Kwok, G. Sue, C. Majidi, Z. Manchester</div>
+            <div class="pub-venue">ICRA 2025 Workshop & CoRL 2025 Workshop</div>
+            <div class="badges">
+              <a href="https://arxiv.org/pdf/2506.05012" class="badge" target="_blank">📄 ICRA</a>
+              <a href="https://openreview.net/pdf?id=Lqsfkyf3N0" class="badge" target="_blank">📄 CoRL</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. CoRL Workshop - SwimGym -->
+        <div class="pub-card">
+          <div class="pub-image" style="background:linear-gradient(135deg,#713f12,#854d0e);"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              SwimGym: A Robotics Platform for Bio-Inspired Swimming Research
+              <span class="status st-workshop">Workshop</span>
+            </div>
+            <div class="pub-authors"><strong>J. Hu</strong>, J. Lee, S. Kwok, G. Sue, C. Majidi, Z. Manchester</div>
+            <div class="pub-venue">CoRL 2025 Workshop</div>
+            <div class="badges">
+              <a href="https://openreview.net/forum?id=n5F9Bzop7H" class="badge" target="_blank">📄 Paper</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- 2024 -->
+    <!-- ============================================== -->
+    <div class="year-section">
+      <h2 class="year-header">2024 <span class="year-count">(1 paper)</span></h2>
+      <div class="pub-list">
+
+        <div class="pub-card">
+          <div class="pub-image" style="background:linear-gradient(135deg,#065f46,#047857);"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              Design and Reality-Based Modeling Optimization of a Flexible Passive Joint Paddle for Swimming Robotics
+              <span class="status st-pub">Published</span>
+            </div>
+            <div class="pub-authors"><strong>J. Hu</strong>, Y. Xu, P. Chen, F. Xie, H. Li, K. He</div>
+            <div class="pub-venue">Biomimetics, 2024</div>
             <div class="pub-abstract">
-              We develop a vision-based tactile sensor for measuring fluid flow patterns on robot surfaces. Inspired by GelSight technology, our sensor provides high-resolution flow velocity fields that enable reactive swimming control.
+              Constructed a pseudo-rigid-body dynamics model and proposed a data-driven optimization method for flexible passive joint paddles, reducing sim-to-real thrust error to 0.51% with 3.3× swimming speed improvement.
             </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
+            <div class="badges">
+              <a href="https://www.mdpi.com/2313-7673/9/1/56" class="badge" target="_blank">📄 Paper</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- 2022 -->
+    <!-- ============================================== -->
+    <div class="year-section">
+      <h2 class="year-header">2022 <span class="year-count">(2 papers)</span></h2>
+      <div class="pub-list">
+
+        <div class="pub-card">
+          <div class="pub-image" style="background:linear-gradient(135deg,#1e3a5f,#2c5282);"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              Design and Experiment of a Sloth-Inspired UAV Perching Climbing Grasping Mechanism
+              <span class="status st-pub">Published</span>
+            </div>
+            <div class="pub-authors"><strong>J. Hu</strong>, P. Chen, H. Wang, X. Deng, L. Bai</div>
+            <div class="pub-venue">IEEE ROBIO 2022</div>
+            <div class="badges">
+              <a href="https://ieeexplore.ieee.org/document/10012005" class="badge" target="_blank">📄 Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-image" style="background:linear-gradient(135deg,#1e40af,#3b82f6);"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              A Novel Multiple Synchronous Compliant and Passive Propellers Inspired by Loons for Swimming Robot
+              <span class="status st-pub">Published</span>
+            </div>
+            <div class="pub-authors">Y. Xu, <strong>J. Hu</strong>, J. Song, H. Li, Q. Zuo, K. He</div>
+            <div class="pub-venue">IEEE ROBIO 2022</div>
+            <div class="badges">
+              <a href="https://ieeexplore.ieee.org/document/10011708" class="badge" target="_blank">📄 Paper</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- IN PROGRESS -->
+    <!-- ============================================== -->
+    <div class="year-section">
+      <h2 class="year-header">In Progress</h2>
+      <div class="pub-list">
+
+        <div class="pub-card">
+          <div class="pub-image">
+            <video src="hydroself.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div class="pub-content">
+            <div class="pub-title">
+              HydroSelf: Generalist Undulatory Swimming through Resilient Self-Organization
+              <span class="status st-prog">In Progress</span>
+            </div>
+            <div class="pub-authors"><strong>J. Hu</strong>, J. Lee, C. Majidi, Z. Manchester</div>
+            <div class="pub-venue">In Preparation</div>
+            <div class="pub-abstract">
+              Designing a modular eel-like swimming robot with IMU, optical flow camera, and distributed pressure sensors. Applying iterative learning control to refine C-start trajectories from differentiable simulation. Implementing iLQR-based feedback for robust pose maintenance under flow disturbances.
+            </div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
             <div class="badges">
               <span class="badge">🔬 In Progress</span>
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
-
-    <!-- 2024 Publications -->
-    <div class="year-section">
-      <h2 class="year-header">2024 <span class="year-count">(4 publications)</span></h2>
-      <div class="pub-list">
-
         <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="pub-image" style="background:linear-gradient(135deg,#78350f,#a16207);"></div>
           <div class="pub-content">
             <div class="pub-title">
-              Spatiotemporal Stiffness Modulation for Efficient Aquatic Robot Locomotion
-              <span class="status-badge status-published">Published</span>
+              A Vision-based Whisker-Inspired Multidirectional Sensor for Fluid Flow Sensing
+              <span class="status st-prog">In Progress</span>
             </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Peng Chen, Jie Dong</div>
-            <div class="pub-venue">IEEE Robotics and Automation Letters (RA-L), 2024</div>
+            <div class="pub-authors"><strong>J. Hu</strong>, C. Majidi</div>
+            <div class="pub-venue">In Preparation</div>
             <div class="pub-abstract">
-              This paper presents a novel control strategy for soft aquatic robots that modulates material stiffness both spatially and temporally. We demonstrate significant improvements in swimming efficiency through synchronized stiffness variation with undulatory motion.
+              Designing a compact skin-like flow sensing system integrating a GelSight-based tactile camera with RGB illumination for fluid flow measurement. Building a two-stage CNN to map base deformation to flow field and velocity estimation.
             </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
+            <div class="abstract-toggle" onclick="toggleAbstract(this)">▸ abstract</div>
             <div class="badges">
-              <a href="https://ieeexplore.ieee.org/document/XXXXXXX" class="badge" target="_blank">📄 IEEE</a>
-              <a href="#" class="badge" target="_blank">🎥 Video</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Bio-Inspired Variable Stiffness Mechanisms for Soft Robotics
-              <span class="status-badge status-published">Published</span>
-            </div>
-            <div class="pub-authors">Peng Chen, <strong>Junzhe Hu</strong>, Tianyi Feng, Jie Dong</div>
-            <div class="pub-venue">Soft Robotics Journal, 2024</div>
-            <div class="pub-abstract">
-              We survey and categorize bio-inspired variable stiffness mechanisms across multiple biological systems, providing design principles for soft robotic applications. The work includes experimental characterization of several novel stiffness modulation approaches.
-            </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
-            <div class="badges">
-              <a href="#" class="badge" target="_blank">📄 Paper</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Multi-Joint Propulsion Dynamics in Undulatory Swimming
-              <span class="status-badge status-published">Published</span>
-            </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Yizhou Wen, Jie Dong</div>
-            <div class="pub-venue">Bioinspiration & Biomimetics, 2024</div>
-            <div class="pub-abstract">
-              This work analyzes the hydrodynamics of multi-joint undulatory propulsion using both computational fluid dynamics and experimental validation. We identify optimal joint configurations for maximizing thrust generation in BCF swimming.
-            </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
-            <div class="badges">
-              <a href="#" class="badge" target="_blank">📄 Paper</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);"></div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Best Capstone Project: Autonomous Surface Vehicle with Variable Stiffness Propulsion
-              <span class="status-badge status-published">Award</span>
-            </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong> (Team Lead), UC Capstone Team</div>
-            <div class="pub-venue">University of Cincinnati, Best Capstone Award 2024</div>
-            <div class="pub-abstract">
-              Award-winning senior design project developing an autonomous surface vehicle with bio-inspired variable stiffness propulsion. The system integrates perception, planning, and adaptive control for efficient marine navigation.
-            </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
-            <div class="badges">
-              <span class="badge">🏆 Best Project</span>
-              <a href="#" class="badge" target="_blank">📊 Poster</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 2023 Publications -->
-    <div class="year-section">
-      <h2 class="year-header">2023 <span class="year-count">(3 publications)</span></h2>
-      <div class="pub-list">
-
-        <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Flexible Appendage Dynamics in Fluid-Structure Interaction
-              <span class="status-badge status-published">Published</span>
-            </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Auke Ijspeert</div>
-            <div class="pub-venue">International Journal of Robotics Research (IJRR), 2023</div>
-            <div class="pub-abstract">
-              We develop a computational framework for simulating flexible appendages in fluid environments using discrete variational integrators. The method preserves geometric structure and energy conservation properties, enabling long-time stable simulations.
-            </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
-            <div class="badges">
-              <a href="#" class="badge" target="_blank">📄 Paper</a>
-              <a href="#" class="badge" target="_blank">💻 Code</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #ebc0fd 0%, #d9ded8 100%);"></div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Hydrodynamic Modeling of BCF Swimming Using Discrete Variational Integrators
-              <span class="status-badge status-published">Published</span>
-            </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Jean-Baptiste Mouret</div>
-            <div class="pub-venue">Robotics: Science and Systems (RSS), 2023</div>
-            <div class="pub-abstract">
-              This paper introduces a novel approach to modeling body-caudal fin (BCF) swimming using structure-preserving numerical methods. We demonstrate improved accuracy and computational efficiency compared to traditional finite element approaches.
-            </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
-            <div class="badges">
-              <a href="#" class="badge" target="_blank">📄 Paper</a>
-              <a href="#" class="badge" target="_blank">🎥 Video</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);"></div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Salamander-Inspired Amphibious Robot with Adaptive Gait Control
-              <span class="status-badge status-published">Published</span>
-            </div>
-            <div class="pub-authors">Peng Chen, <strong>Junzhe Hu</strong>, Auke Ijspeert</div>
-            <div class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA), 2023</div>
-            <div class="pub-abstract">
-              We present a salamander-inspired robot capable of seamless transition between terrestrial and aquatic locomotion. Central pattern generators (CPGs) enable adaptive gait modulation based on environmental feedback.
-            </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
-            <div class="badges">
-              <a href="#" class="badge" target="_blank">📄 Paper</a>
-              <a href="#" class="badge" target="_blank">🎥 Video</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 2022 and Earlier -->
-    <div class="year-section">
-      <h2 class="year-header">2022 & Earlier <span class="year-count">(2 publications)</span></h2>
-      <div class="pub-list">
-
-        <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);"></div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Soft Robotic Gripper with Variable Stiffness for Underwater Grasping
-              <span class="status-badge status-published">Published</span>
-            </div>
-            <div class="pub-authors"><strong>Junzhe Hu</strong>, Li Wen, SIAT Research Team</div>
-            <div class="pub-venue">IEEE Robotics and Automation Letters (RA-L), 2022</div>
-            <div class="pub-abstract">
-              We develop a pneumatically-actuated soft gripper with variable stiffness capabilities for underwater manipulation. The gripper adapts its compliance to handle fragile marine organisms and rigid objects with equal dexterity.
-            </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
-            <div class="badges">
-              <a href="#" class="badge" target="_blank">📄 Paper</a>
-              <a href="#" class="badge" target="_blank">🎥 Video</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-image" style="background:linear-gradient(135deg, #fddb92 0%, #d1fdff 100%);"></div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Design and Control of a Biomimetic Robotic Fish with C-Start Escape Response
-              <span class="status-badge status-published">Published</span>
-            </div>
-            <div class="pub-authors">Tianyi Feng, <strong>Junzhe Hu</strong>, Jie Dong</div>
-            <div class="pub-venue">Bioinspiration & Biomimetics, 2021</div>
-            <div class="pub-abstract">
-              This work implements the C-start escape response observed in fish using a biomimetic robotic platform. We demonstrate high-acceleration maneuvers achieving performance comparable to biological systems.
-            </div>
-            <div class="abstract-toggle" onclick="toggleAbstract(this)">▼ Show abstract</div>
-            <div class="badges">
-              <a href="#" class="badge" target="_blank">📄 Paper</a>
+              <span class="badge">🔬 In Progress</span>
             </div>
           </div>
         </div>
@@ -705,30 +541,18 @@
     </div>
 
     <footer>
-      Last updated: <span id="updated"></span> <br>
-      &copy; 2025 Junzhe Hu. <a href="index.html">Back to Home</a>
+      Last updated: <span id="updated"></span> · © 2025 Junzhe Hu · <a href="index.html">Back to Home</a>
     </footer>
-
   </div>
 
   <script>
-    // Date Update
-    const d = new Date();
-    document.getElementById('updated').textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+    document.getElementById('updated').textContent =
+      new Date().toLocaleDateString('en-US',{year:'numeric',month:'short'});
 
-    // Toggle Abstract
-    function toggleAbstract(element) {
-      const card = element.closest('.pub-card');
-      const abstract = card.querySelector('.pub-abstract');
-      const isExpanded = card.classList.contains('expanded');
-      
-      if (isExpanded) {
-        card.classList.remove('expanded');
-        element.textContent = '▼ Show abstract';
-      } else {
-        card.classList.add('expanded');
-        element.textContent = '▲ Hide abstract';
-      }
+    function toggleAbstract(el){
+      const card = el.closest('.pub-card');
+      const open = card.classList.toggle('expanded');
+      el.textContent = open ? '▾ hide abstract' : '▸ abstract';
     }
   </script>
 </body>
