@@ -4,381 +4,427 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Junzhe Hu | CMU Robotics</title>
-  <meta name="description" content="Personal academic homepage of Junzhe Hu — CMU RI / Soft Machines Lab & RExLab." />
+  <meta name="description" content="Personal academic homepage of Junzhe Hu — CMU RI / Soft Machines Lab & RExLab. Incoming MIT MechE PhD." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* 调色板：使用更有质感的深蓝灰 (Slate/Navy) 色系 */
-      --bg: #0b111a;         /* 更深的背景 */
-      --card-bg: #161b22;    /* 卡片背景 */
-      --card-border: #30363d;/* 边框颜色 */
-      --text-main: #c9d1d9;  /* 主要文字 */
-      --text-muted: #8b949e; /* 次要文字 */
-      --accent: #58a6ff;     /* 提亮色 (CMU Blue 风格) */
-      --accent-hover: #79c0ff;
-      --tag-bg: rgba(56, 139, 253, 0.15);
-      --tag-text: #58a6ff;
-      --shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+      --bg: #0a0e14;
+      --bg-elevated: #111820;
+      --card-bg: #151c27;
+      --card-border: #1e2a3a;
+      --card-border-hover: #2d4158;
+      --text-main: #c5cdd8;
+      --text-muted: #6e7f94;
+      --text-bright: #e8ecf1;
+      --accent: #4d9de6;
+      --accent-soft: rgba(77,157,230,0.12);
+      --accent-hover: #6bb3f0;
+      --red: #c41e3a;
+      --green: #3fb950;
+      --yellow: #d4a72c;
+      --purple: #a78bfa;
+      --mono: 'JetBrains Mono', monospace;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
-      margin: 0; padding: 0;
+    html {
       background: var(--bg);
       color: var(--text-main);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.65;
       scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--accent); text-decoration: none; transition: all 0.2s; }
-    a:hover { color: var(--accent-hover); text-decoration: underline; }
+    body { min-height: 100vh; }
 
-    /* 布局容器 */
-    .wrap {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent-hover); }
+
+    /* === NAV === */
+    .topnav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,14,20,0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--card-border);
     }
+    .topnav-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 28px;
+    }
+    .nav-brand { font-weight: 700; font-size: 1.05rem; color: var(--text-bright); letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
-    /* Header 区域 */
-    header {
-      display: flex;
-      gap: 32px;
-      align-items: flex-start;
-      margin-bottom: 48px;
-      padding-bottom: 32px;
+    /* === LAYOUT === */
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
+
+    /* === HERO === */
+    .hero {
+      display: flex; gap: 36px; align-items: flex-start;
+      padding: 52px 0 44px;
       border-bottom: 1px solid var(--card-border);
     }
 
     .avatar {
-      width: 160px; height: 160px;
-      border-radius: 50%; /* 圆形头像更符合现代个人主页风格 */
-      background: #222 center/cover no-repeat;
-      flex-shrink: 0;
-      border: 2px solid var(--card-border);
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-
-    .header-content h1 {
-      font-size: 2.5rem;
-      margin: 0 0 8px 0;
-      color: #fff;
-      letter-spacing: -0.02em;
-    }
-
-    .subtitle {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-      font-weight: 300;
-    }
-
-    /* 优化后的 Chips 标签 */
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .chip {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--card-border);
-      padding: 4px 12px;
-      border-radius: 100px;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      transition: all 0.2s;
-    }
-    .chip:hover { background: var(--tag-bg); color: var(--tag-text); border-color: var(--tag-text); }
-
-    .links { display: flex; gap: 16px; flex-wrap: wrap; }
-    .links a {
-      font-weight: 600;
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-
-    /* 主体网格布局 */
-    .twocol {
-      display: grid;
-      grid-template-columns: 2fr 1fr; /* 左侧更宽，用于 Pubs，右侧用于 Info */
-      gap: 32px;
-    }
-    /* 响应式调整 */
-    @media (max-width: 900px) {
-      header { flex-direction: column; align-items: center; text-align: center; }
-      .links { justify-content: center; }
-      .twocol { grid-template-columns: 1fr; }
-      .avatar { width: 140px; height: 140px; }
-    }
-
-    /* 通用 Section 样式 */
-    section { margin-bottom: 48px; }
-    
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--card-border);
-      color: #fff;
-      display: flex; align-items: center; gap: 10px;
-    }
-    
-    /* News Timeline 样式优化 */
-    .news ul {
-      list-style: none;
-      padding-left: 20px;
-      border-left: 2px solid var(--card-border);
-      margin: 0;
-    }
-    .news li {
-      margin-bottom: 18px;
-      position: relative;
-      padding-left: 16px;
-    }
-    /* 时间轴的小圆点 */
-    .news li::before {
-      content: '';
-      position: absolute;
-      left: -27px; top: 8px;
-      width: 12px; height: 12px;
-      background: var(--bg);
-      border: 2px solid var(--text-muted);
+      width: 156px; height: 156px;
       border-radius: 50%;
-      transition: all 0.2s;
-    }
-    .news li:hover::before { border-color: var(--accent); background: var(--accent); }
-    
-    .news-date {
-      font-family: monospace;
-      color: var(--accent);
-      font-weight: 600;
-      margin-right: 6px;
+      background: var(--bg-elevated) center/cover no-repeat;
+      flex-shrink: 0;
+      border: 3px solid var(--card-border);
+      box-shadow: 0 0 0 6px rgba(77,157,230,0.06);
     }
 
+    .hero-text h1 {
+      font-size: 2.6rem; font-weight: 700;
+      color: #fff; letter-spacing: -0.03em;
+      line-height: 1.15; margin-bottom: 6px;
+    }
+
+    .hero-sub {
+      font-size: 1.08rem; color: var(--text-muted);
+      font-weight: 400; margin-bottom: 16px; line-height: 1.55;
+    }
+    .hero-sub strong { color: var(--text-bright); font-weight: 600; }
+    .cmu { color: var(--red); font-weight: 700; }
+    .mit { color: #a31f34; font-weight: 700; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+    .chip {
+      font-family: var(--mono); font-size: 0.78rem; font-weight: 500;
+      padding: 4px 11px; border-radius: 6px;
+      background: var(--accent-soft); color: var(--accent);
+      border: 1px solid rgba(77,157,230,0.15);
+    }
+
+    .hero-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-weight: 600; font-size: 0.9rem;
+      padding: 6px 14px; border-radius: 8px;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      transition: all 0.2s;
+    }
+    .hero-links a:hover {
+      border-color: var(--accent); color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    /* === MAIN GRID === */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      padding-top: 44px;
+      padding-bottom: 60px;
+    }
+
+    section { margin-bottom: 44px; }
+
+    h2 {
+      font-size: 1.2rem; font-weight: 700; color: var(--text-bright);
+      margin-bottom: 18px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+      letter-spacing: -0.01em;
+    }
+
+    /* === ABOUT === */
+    .about p { margin-bottom: 12px; font-size: 0.97rem; }
+    .about strong { color: var(--text-bright); }
+
+    /* === NEWS === */
+    .news-list { list-style: none; padding-left: 18px; border-left: 2px solid var(--card-border); }
+    .news-list li {
+      position: relative; padding-left: 18px; margin-bottom: 14px; font-size: 0.93rem;
+    }
+    .news-list li::before {
+      content: '';
+      position: absolute; left: -24px; top: 8px;
+      width: 10px; height: 10px;
+      background: var(--bg); border: 2px solid var(--text-muted);
+      border-radius: 50%; transition: all 0.2s;
+    }
+    .news-list li:hover::before { border-color: var(--accent); background: var(--accent); }
+    .news-date {
+      font-family: var(--mono); font-size: 0.82rem;
+      color: var(--accent); font-weight: 500; margin-right: 4px;
+    }
+    .news-hidden { display: none; }
     .news-toggle {
-      margin-top: 10px; margin-left: 20px;
-      font-size: 0.9rem; cursor: pointer; color: var(--text-muted);
+      margin-top: 8px; margin-left: 18px;
+      font-size: 0.88rem; cursor: pointer; color: var(--text-muted);
+      user-select: none;
     }
     .news-toggle:hover { color: var(--accent); }
 
-    /* Experience / Education Cards - 修复校徽显示 */
-    .edu-card {
-      display: flex; gap: 14px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 12px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      align-items: center;
-      transition: transform 0.2s;
-    }
-    .edu-card:hover { transform: translateX(4px); border-color: var(--text-muted); }
-    .edu-logo {
-      width: 48px; 
-      height: 48px; 
-      border-radius: 8px; 
-      background: #000; 
-      flex-shrink: 0;
-      background-size: contain;  /* 修复：确保图片完整显示 */
-      background-position: center;  /* 修复：图片居中 */
-      background-repeat: no-repeat;  /* 修复：防止图片重复 */
-    }
-    .edu-info .title { font-weight: 700; font-size: 0.95rem; color: #fff; }
-    .edu-info .subtitle { font-size: 0.85rem; color: var(--text-muted); }
+    /* === PUBLICATIONS === */
+    .pub-grid { display: grid; gap: 20px; }
 
-    /* Publications 样式优化 */
-    .pub-grid { display: grid; gap: 24px; }
-    
     .pub-card {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 20px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 0; background: var(--card-bg);
+      border: 1px solid var(--card-border); border-radius: 10px;
       overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
     }
-    
     .pub-card:hover {
-      border-color: var(--text-muted);
-      box-shadow: 0 10px 40px -10px rgba(0,0,0,0.6);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 8px 32px -8px rgba(0,0,0,0.5);
       transform: translateY(-2px);
     }
 
-    .pub-image {
-      height: 100%;
-      min-height: 160px;
-      background: #000 center/cover no-repeat;
+    .pub-thumb {
+      min-height: 150px; background: var(--bg-elevated) center/cover no-repeat;
       position: relative;
     }
-    .pub-image video, .pub-image img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-    }
+    .pub-thumb video, .pub-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .pub-content { padding: 16px 20px 16px 0; display: flex; flex-direction: column; gap: 6px; }
-    
-    @media (max-width: 600px) {
-      .pub-card { grid-template-columns: 1fr; }
-      .pub-content { padding: 0 16px 16px 16px; }
-      .pub-image { height: 180px; }
-    }
+    .pub-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+    .pub-title { font-size: 1.02rem; font-weight: 700; color: #fff; line-height: 1.4; }
+    .pub-authors { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+    .pub-authors strong { color: var(--text-bright); }
+    .pub-venue { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-top: 2px; }
 
-    .pub-title { font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4; }
-    .pub-authors { font-size: 0.95rem; color: var(--text-muted); }
-    .pub-venue { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-top: 2px; }
-    
-    /* Badges (Link buttons) */
-    .badges { display: flex; gap: 8px; margin-top: 8px; }
+    .badges { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
     .badge {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 6px;
-      background: var(--card-border);
-      color: var(--text-main);
-      font-size: 0.8rem;
-      font-weight: 500;
-      border: 1px solid transparent;
-      text-decoration: none;
+      display: inline-block; padding: 3px 9px; border-radius: 5px;
+      background: var(--card-border); color: var(--text-main);
+      font-size: 0.78rem; font-weight: 500;
+      border: 1px solid transparent; text-decoration: none;
+      transition: all 0.2s;
     }
-    .badge:hover {
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      border-color: var(--tag-text);
-      text-decoration: none;
+    .badge:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+
+    .status { font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+    .st-review { background: rgba(167,139,250,0.12); color: var(--purple); }
+    .st-accept { background: rgba(63,185,80,0.12); color: var(--green); }
+    .st-prog { background: rgba(212,167,44,0.12); color: var(--yellow); }
+    .st-pub { background: rgba(63,185,80,0.12); color: var(--green); }
+
+    /* === SIDEBAR === */
+    .sidebar section { margin-bottom: 32px; }
+
+    .exp-card {
+      display: flex; gap: 12px; align-items: center;
+      padding: 10px; border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      margin-bottom: 8px;
+      transition: border-color 0.2s;
     }
+    .exp-card:hover { border-color: var(--card-border-hover); }
 
-    /* 技能列表优化 */
-    .skill-list li { margin-bottom: 6px; }
+    .exp-logo {
+      width: 40px; height: 40px; border-radius: 6px;
+      background: #000 center/contain no-repeat; flex-shrink: 0;
+    }
+    .exp-name { font-weight: 600; font-size: 0.9rem; color: var(--text-bright); }
+    .exp-detail { font-size: 0.8rem; color: var(--text-muted); }
 
+    .edu-card {
+      display: flex; gap: 12px; align-items: center;
+      padding: 10px; border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      margin-bottom: 8px;
+    }
+    .edu-logo {
+      width: 40px; height: 40px; border-radius: 6px;
+      background: #000 center/contain no-repeat; flex-shrink: 0;
+    }
+    .edu-name { font-weight: 600; font-size: 0.9rem; color: var(--text-bright); }
+    .edu-detail { font-size: 0.8rem; color: var(--text-muted); }
+
+    .side-list { list-style: none; padding: 0; }
+    .side-list li {
+      font-size: 0.88rem; color: var(--text-muted);
+      padding: 5px 0; border-bottom: 1px solid rgba(30,42,58,0.5);
+    }
+    .side-list li:last-child { border-bottom: none; }
+    .side-list strong { color: var(--text-bright); font-weight: 600; }
+
+    /* === FOOTER === */
     footer {
-      margin-top: 60px;
-      padding-top: 20px;
+      padding: 20px 0; margin-top: 20px;
       border-top: 1px solid var(--card-border);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      text-align: center; color: var(--text-muted); font-size: 0.85rem;
     }
-    
-    /* 强调当前用户的名字 */
-    strong { color: #fff; font-weight: 600; }
-    
-    /* 辅助类 */
-    .news-hidden { display: none; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 860px) {
+      .hero { flex-direction: column; align-items: center; text-align: center; }
+      .hero-text h1 { font-size: 2rem; }
+      .chips, .hero-links { justify-content: center; }
+      .main-grid { grid-template-columns: 1fr; }
+      .pub-card { grid-template-columns: 1fr; }
+      .pub-body { padding: 12px 14px 14px; }
+      .pub-thumb { height: 180px; min-height: 180px; }
+      .topnav-inner { flex-direction: column; gap: 10px; }
+    }
   </style>
 </head>
 <body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <div class="nav-brand">Junzhe Hu</div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="mailto:junzhehu@andrew.cmu.edu">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="wrap">
-    
-    <header>
-      <div class="avatar" style="background-image:url('Junzhe_Photo_2025.jpg')" aria-label="Portrait"></div>
-      <div class="header-content">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="avatar" style="background-image:url('Junzhe_Photo_2025.jpg')" aria-label="Portrait of Junzhe Hu"></div>
+      <div class="hero-text">
         <h1>Junzhe Hu</h1>
-        <div class="subtitle">
-          M.S. in Robotics @ <strong style="color: #c41e3a;">CMU RI</strong><br>
-          Soft Machines Lab & RExLab
-        </div>
-        
-        <div class="chips">
-          <span class="chip">🐟 Bio-inspired</span>
-          <span class="chip">🌊 FSI Simulation</span>
-          <span class="chip">🧩 Variable Stiffness</span>
-          <span class="chip">🧠 Robot Learning</span>
-          <span class="chip">👀 Flow Sensing</span>
+        <div class="hero-sub">
+          M.S. Robotics @ <span class="cmu">CMU Robotics Institute</span><br>
+          Incoming PhD @ <span class="mit">MIT Mechanical Engineering</span> (Fall 2026)<br>
+          <strong>Soft Machines Lab</strong> &amp; <strong>RExLab</strong> · Advisors: Carmel Majidi &amp; Zachary Manchester
         </div>
 
-        <div class="links">
-          <a href="mailto:junzhehu@andrew.cmu.edu">✉️ Email</a>
+        <div class="chips">
+          <span class="chip">Bio-inspired Aquatic Robots</span>
+          <span class="chip">FSI Simulation</span>
+          <span class="chip">Variable Stiffness</span>
+          <span class="chip">Robot Learning</span>
+          <span class="chip">Flow Sensing</span>
+        </div>
+
+        <div class="hero-links">
+          <a href="mailto:junzhehu@andrew.cmu.edu">✉ Email</a>
           <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">📚 Scholar</a>
-          <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">🔗 LinkedIn</a>
+          <a href="https://www.linkedin.com/in/junzhe-hu/" target="_blank">🔗 LinkedIn</a>
           <a href="cv.pdf" target="_blank">📄 CV</a>
         </div>
       </div>
-    </header>
+    </div>
 
-    <main class="twocol">
-      
+    <!-- MAIN -->
+    <div class="main-grid">
+
       <div class="col-main">
-        
+
+        <!-- ABOUT -->
         <section class="about">
           <h2>About Me</h2>
           <p>
-            I am a Master's student at the <strong>Carnegie Mellon University Robotics Institute (RI)</strong>, advised by Prof. Carmel Majidi (Soft Machines Lab) and Prof. Zachary Manchester (RExLab).
+            I am a Master's student at the <strong>Carnegie Mellon University Robotics Institute</strong>, co-advised by 
+            <a href="https://scholar.google.com/citations?hl=en&user=1LyndUsAAAAJ" target="_blank">Prof. Carmel Majidi</a> (Soft Machines Lab) and 
+            <a href="https://scholar.google.com/citations?user=utFbPYUAAAAJ&hl=en" target="_blank">Prof. Zachary Manchester</a> (RExLab). 
+            I will join <strong>MIT Mechanical Engineering</strong> as a PhD student in Fall 2026.
           </p>
           <p>
-            My research focuses on <strong>Physical Intelligence</strong> in aquatic environments. I explore how morphology, materials (variable stiffness), and control can be co-designed to allow robots to efficiently interact with complex fluid dynamics.
+            My research centers on <strong>physical intelligence in aquatic robotics</strong>. I develop differentiable multiphysics simulators coupling articulated robot dynamics with fluid mechanics, design novel variable-stiffness mechanisms for efficient underwater locomotion, and combine optimal and learning-based control. Broadly, I aim to understand how morphology, material properties, and local sensing can offload computation and enable robust, intelligent behavior in complex fluid environments.
           </p>
         </section>
 
-        <section class="news">
+        <!-- NEWS -->
+        <section>
           <h2>News</h2>
-          <ul id="newsList">
-            <li><span class="news-date">Dec 2025</span> Invited talk at CMU Soft Robotics Seminar on <em>Stiffness Modulation</em>.</li>
-            <li><span class="news-date">Oct 2025</span> Submitted paper to <strong>npj Robotics</strong>.</li>
-            <li><span class="news-date">Oct 2025</span> Released <strong>Aquarium 2.0</strong> simulation framework preprint.</li>
-            <li><span class="news-date">Jul 2025</span> Paper accepted at <strong>IROS 2025</strong>.</li>
-            
-            <li class="news-hidden"><span class="news-date">Apr 2025</span> Started developing GelSight-inspired flow sensors.</li>
-            <li class="news-hidden"><span class="news-date">Feb 2025</span> Preprint released: Reduced-Mode Cosserat Rod Model.</li>
-            <li class="news-hidden"><span class="news-date">Aug 2024</span> Joined <strong>CMU RI</strong> as Graduate Research Assistant.</li>
-            <li class="news-hidden"><span class="news-date">May 2024</span> Won <strong>Best Capstone Project Award</strong> at UC.</li>
+          <ul class="news-list" id="newsList">
+            <li><span class="news-date">2026.01</span> Paper on <em>Realizing Robotic Swimming with Strongly-Coupled Fluid-Robot Multiphysics</em> submitted to <strong>RSS 2026</strong>.</li>
+            <li><span class="news-date">2025.12</span> Paper on <em>Spatiotemporal Stiffness Modulation</em> accepted at <strong>npj Robotics</strong>!</li>
+            <li><span class="news-date">2025.10</span> Two workshop papers published at <strong>CoRL 2025</strong> — SwimGym and Unified Multiphysics.</li>
+            <li><span class="news-date">2025.07</span> Paper on <em>Aerial-Aquatic Robot</em> accepted at <strong>IROS 2025</strong> (Oral).</li>
+            <li class="news-hidden"><span class="news-date">2025.06</span> Workshop paper on <em>Unified Multiphysics Framework</em> published at <strong>ICRA 2025 Workshop</strong>.</li>
+            <li class="news-hidden"><span class="news-date">2025.05</span> Paper on <em>Semi-supervised Medical Image Segmentation</em> published in <strong>IEEE T-MI</strong>.</li>
+            <li class="news-hidden"><span class="news-date">2025.04</span> Paper on <em>Vortex-Induced Propulsion</em> submitted to <strong>PNAS</strong>.</li>
+            <li class="news-hidden"><span class="news-date">2024.08</span> Joined <strong>CMU Robotics Institute</strong> as a graduate research assistant.</li>
+            <li class="news-hidden"><span class="news-date">2024.05</span> Won <strong>Best Capstone Project Award</strong> (1/130) at University of Cincinnati.</li>
+            <li class="news-hidden"><span class="news-date">2023.11</span> Awarded <strong>Chinese Government National Scholarship</strong> (top 0.8%).</li>
           </ul>
           <div class="news-toggle" onclick="toggleNews()">
             <span id="newsToggleText">Show older news ↓</span>
           </div>
         </section>
 
-        <section class="pubs">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
-            <h2>Selected Publications</h2>
-            <a href="publications.html" style="font-size:0.9rem">View Full List →</a>
+        <!-- SELECTED PUBLICATIONS -->
+        <section>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+            <h2 style="border:none;padding:0;margin:0;">Selected Publications</h2>
+            <a href="publications.html" style="font-size:0.88rem;font-weight:500;">Full List →</a>
           </div>
+          <div style="height:1px;background:var(--card-border);margin-bottom:18px;"></div>
 
           <div class="pub-grid">
-            
-            <!-- Publication 1: In Progress -->
+
+            <!-- npj Robotics (Accepted) -->
             <div class="pub-card">
-              <div class="pub-image">
-                <video src="hydroself.mp4" autoplay muted loop playsinline></video>
-              </div>
-              <div class="pub-content">
-                <div class="pub-title">Against the Current: Self-Organized Upstream Undulatory Swimming Via Multisensory Feedback</div>
-                <div class="pub-authors"><strong>Junzhe Hu</strong>, J. Lee, Z. Temel, C. Majidi, Z. Manchester</div>
-                <div class="pub-venue">In Progress (2025)</div>
+              <div class="pub-thumb" style="background:linear-gradient(135deg,#0c4a6e,#164e63);"></div>
+              <div class="pub-body">
+                <div class="pub-title">Spatiotemporal Stiffness Modulation for Efficient Aquatic Robot Locomotion <span class="status st-accept">Accepted</span></div>
+                <div class="pub-authors"><strong>J. Hu</strong>, J. Lee, T. Wu, G. Sue, J. Liao, Z. Erickson, Z. Manchester, C. Majidi</div>
+                <div class="pub-venue">npj Robotics, 2026</div>
                 <div class="badges">
-                  <span class="badge">🔬 In Progress</span>
+                  <a href="https://drive.google.com/file/d/1MGUCGkq_2HPAL21sU5o2qaWzqa-F2ZyQ/view" class="badge" target="_blank">📄 Paper</a>
                 </div>
               </div>
             </div>
 
-            <!-- Publication 2: Under Review -->
+            <!-- RSS 2026 (Under Review) -->
             <div class="pub-card">
-              <div class="pub-image">
-                <div style="width:100%;height:100%;background:linear-gradient(45deg, #1e293b, #0f172a);"></div>
+              <div class="pub-thumb" style="background:linear-gradient(135deg,#1e1b4b,#312e81);"></div>
+              <div class="pub-body">
+                <div class="pub-title">Realizing Robotic Swimming with Strongly-Coupled Fluid-Robot Multiphysics <span class="status st-review">Under Review</span></div>
+                <div class="pub-authors"><strong>J. Hu*</strong>, J. H. Lee*, C. Majidi, Z. Manchester</div>
+                <div class="pub-venue">RSS 2026 (Under Review)</div>
+                <div class="badges">
+                  <a href="https://drive.google.com/drive/folders/1YacPtxmqXjM4Ed6mYpAPxMvq7ng3v6qk" class="badge" target="_blank">📄 Paper</a>
+                </div>
               </div>
-              <div class="pub-content">
-                <div class="pub-title">Vortex-Induced Propulsion: Revealing Physical Intelligence in Upstream Robotic Swimming</div>
-                <div class="pub-authors">J. Lee*, <strong>J. Hu*</strong>, S. Kazi, C. Majidi, M. Luhar, Z. Manchester</div>
-                <div class="pub-venue">PNAS 2025 (Under Review)</div>
+            </div>
+
+            <!-- PNAS (Under Review) -->
+            <div class="pub-card">
+              <div class="pub-thumb" style="background:linear-gradient(135deg,#1a1a2e,#16213e);"></div>
+              <div class="pub-body">
+                <div class="pub-title">Vortex-Induced Propulsion in Upstream Robotic Swimming <span class="status st-review">Under Review</span></div>
+                <div class="pub-authors">J. H. Lee*, <strong>J. Hu*</strong>, S. Kazi, M. Luhar, C. Majidi, Z. Manchester</div>
+                <div class="pub-venue">PNAS (Under Review)</div>
                 <div class="badges">
                   <span class="badge">⏳ Under Review</span>
                 </div>
               </div>
             </div>
 
-            <!-- Publication 3: IROS 2025 - 添加实际链接 -->
+            <!-- IROS 2025 -->
             <div class="pub-card">
-              <div class="pub-image" style="background-image:url('aerial_aquatic_thumb.jpg')"></div>
-              <div class="pub-content">
-                <div class="pub-title">A Novel Aerial-Aquatic Locomotion Robot with Variable Stiffness Propulsion Module</div>
-                <div class="pub-authors"><strong>Junzhe Hu</strong>, P. Chen, T. Feng, Y. Wen, K. Wu, J. Dong</div>
-                <div class="pub-venue">IEEE IROS 2025</div>
+              <div class="pub-thumb" style="background-image:url('aerial_aquatic_thumb.jpg');"></div>
+              <div class="pub-body">
+                <div class="pub-title">A Novel Aerial-Aquatic Locomotion Robot with Variable Stiffness Propulsion Module <span class="status st-pub">Published</span></div>
+                <div class="pub-authors"><strong>J. Hu</strong>, P. Chen, T. Feng, Y. Wen, K. Wu, J. Dong</div>
+                <div class="pub-venue">IEEE IROS 2025 (Oral)</div>
                 <div class="badges">
-                  <!-- 修复：添加实际PDF链接，请替换为你的实际文件路径 -->
-                  <a href="papers/iros2025_aerial_aquatic.pdf" class="badge" target="_blank">📄 Paper</a>
-                  <!-- 修复：添加实际视频链接，请替换为你的实际文件路径或YouTube链接 -->
-                  <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" class="badge" target="_blank">🎥 Video</a>
+                  <a href="https://ieeexplore.ieee.org/document/11247420" class="badge" target="_blank">📄 Paper</a>
+                  <a href="#" class="badge" target="_blank">🎥 Video</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- IEEE T-MI -->
+            <div class="pub-card">
+              <div class="pub-thumb" style="background:linear-gradient(135deg,#4a1942,#2d1b69);"></div>
+              <div class="pub-body">
+                <div class="pub-title">Expanding and Rectifying Pseudo-Label Perturbation Space for Semi-Supervised Medical Image Segmentation <span class="status st-pub">Published</span></div>
+                <div class="pub-authors"><strong>J. Hu</strong>, Y. Wen, E. Roussinova, M. Bouri</div>
+                <div class="pub-venue">IEEE Trans. Medical Imaging, 2025</div>
+                <div class="badges">
+                  <a href="https://drive.google.com/file/d/1XIzOFnWbe76Z6WX7-l-z-U77fD1vB0x6/view" class="badge" target="_blank">📄 Paper</a>
                 </div>
               </div>
             </div>
@@ -388,93 +434,111 @@
 
       </div>
 
-      <aside class="col-side">
-        
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
         <section>
-          <h2>Experience</h2>
+          <h2>Education</h2>
           <div class="edu-card">
-            <div class="edu-logo" style="background-image:url('CMURI.jpg')"></div>
-            <div class="edu-info">
-              <div class="title">CMU Robotics Inst.</div>
-              <div class="subtitle">Graduate RA · 2024–Present</div>
+            <div class="edu-logo" style="background-image:url('MIT.png');background-color:#fff;"></div>
+            <div>
+              <div class="edu-name">MIT MechE</div>
+              <div class="edu-detail">PhD · Fall 2026 (Incoming)</div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-logo" style="background-image:url('CMURI.jpg');"></div>
+            <div>
+              <div class="edu-name">CMU Robotics Inst.</div>
+              <div class="edu-detail">M.S. Robotics · GPA 4.0 · 2024–26</div>
             </div>
           </div>
           <div class="edu-card">
             <div class="edu-logo" style="background-image:url('UC.png');background-color:#fff;"></div>
-            <div class="edu-info">
-              <div class="title">Univ. of Cincinnati</div>
-              <div class="subtitle">RA · 2023–2024</div>
+            <div>
+              <div class="edu-name">Univ. of Cincinnati</div>
+              <div class="edu-detail">B.S. MechE · Cum Laude · 2023–24</div>
             </div>
           </div>
           <div class="edu-card">
-            <div class="edu-logo" style="background-image:url('EPFL.png');background-color:#fff;"></div>
-            <div class="edu-info">
-              <div class="title">EPFL (Biorob)</div>
-              <div class="subtitle">Research Asst. · 2023</div>
+            <div class="edu-logo" style="background-image:url('CQU.png');background-color:#fff;"></div>
+            <div>
+              <div class="edu-name">Chongqing University</div>
+              <div class="edu-detail">B.E. MechE · GPA 3.84 · 2019–23</div>
             </div>
           </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background-image:url('INRIA.png');background-color:#fff;"></div>
-            <div class="edu-info">
-              <div class="title">INRIA</div>
-              <div class="subtitle">Research Asst. · 2023</div>
+        </section>
+
+        <section>
+          <h2>Research Experience</h2>
+          <div class="exp-card">
+            <div class="exp-logo" style="background-image:url('CMURI.jpg');"></div>
+            <div>
+              <div class="exp-name">CMU SML + RExLab</div>
+              <div class="exp-detail">Graduate RA · 2024–Present</div>
             </div>
           </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background-image:url('SIAT.jfif')"></div>
-            <div class="edu-info">
-              <div class="title">SIAT, CAS</div>
-              <div class="subtitle">Intern · 2021–2022</div>
+          <div class="exp-card">
+            <div class="exp-logo" style="background-image:url('EPFL.png');background-color:#fff;"></div>
+            <div>
+              <div class="exp-name">EPFL Biorob</div>
+              <div class="exp-detail">Research Intern · 2023</div>
+            </div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-logo" style="background-image:url('INRIA.png');background-color:#fff;"></div>
+            <div>
+              <div class="exp-name">INRIA</div>
+              <div class="exp-detail">Research Asst. · 2023–24</div>
+            </div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-logo" style="background-image:url('SIAT.jfif');"></div>
+            <div>
+              <div class="exp-name">SIAT, CAS</div>
+              <div class="exp-detail">Research Intern · 2021–22</div>
             </div>
           </div>
         </section>
 
         <section>
           <h2>Skills</h2>
-          <ul class="skill-list" style="padding-left:20px; color:var(--text-muted); font-size:0.9rem;">
-            <li><strong>Code:</strong> Python, C++, MATLAB, Julia</li>
-            <li><strong>Sim/Design:</strong> Isaac Gym, Mujoco, SolidWorks, Blender</li>
-            <li><strong>Hardware:</strong> PCB Design, Soft Lithography, molding</li>
+          <ul class="side-list">
+            <li><strong>Languages:</strong> Python, C++, C, MATLAB, Julia</li>
+            <li><strong>ML/Sim:</strong> PyTorch, MuJoCo, SOFA, ROS</li>
+            <li><strong>CAD/FEA:</strong> SolidWorks, Blender, COMSOL, Abaqus</li>
+            <li><strong>Hardware:</strong> STM32, Arduino, PCB, 3D Printing</li>
           </ul>
         </section>
 
         <section>
           <h2>Honors</h2>
-          <ul class="skill-list" style="padding-left:20px; color:var(--text-muted); font-size:0.9rem;">
-            <li>Best Capstone Award (UC)</li>
-            <li>National Scholarship (China)</li>
-            <li>CQU Student Pacesetter</li>
+          <ul class="side-list">
+            <li>🏆 Best Capstone Award, UC (1/130)</li>
+            <li>🏅 National Scholarship, China (top 0.8%)</li>
+            <li>⭐ CQU Student Pacesetter (top 0.18%)</li>
+            <li>📐 MCM/ICM Meritorious Winner</li>
           </ul>
         </section>
 
       </aside>
-
-    </main>
+    </div>
 
     <footer>
-      Last updated: <span id="updated"></span> <br>
-      &copy; 2025 Junzhe Hu. Built with code.
+      Last updated: <span id="updated"></span> · © 2025 Junzhe Hu
     </footer>
   </div>
 
   <script>
-    // Date Update
-    const d = new Date();
-    document.getElementById('updated').textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+    document.getElementById('updated').textContent =
+      new Date().toLocaleDateString('en-US',{year:'numeric',month:'short'});
 
-    // News Toggle
-    function toggleNews() {
-      const hiddenItems = document.querySelectorAll('.news-hidden');
-      const toggleText = document.getElementById('newsToggleText');
-      
-      // Determine state based on current style
-      const currentlyVisible = hiddenItems[0].style.display === 'block';
-      
-      hiddenItems.forEach(item => {
-        item.style.display = currentlyVisible ? 'none' : 'block';
-      });
-      
-      toggleText.textContent = currentlyVisible ? 'Show older news ↓' : 'Show less ↑';
+    function toggleNews(){
+      const items = document.querySelectorAll('.news-hidden');
+      const txt = document.getElementById('newsToggleText');
+      const show = items[0].style.display !== 'list-item';
+      items.forEach(i => i.style.display = show ? 'list-item' : 'none');
+      txt.textContent = show ? 'Show less ↑' : 'Show older news ↓';
     }
   </script>
 </body>
