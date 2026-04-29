@@ -11,18 +11,19 @@
 
   <style>
     :root {
-      --bg: #fbfaf7;
-      --surface: #ffffff;
-      --border: #e7e3da;
-      --border-strong: #cfc9bc;
-      --text: #2a2a2a;
-      --text-soft: #5b5b5b;
-      --text-muted: #8a8a85;
-      --text-strong: #111;
-      --accent: #8a1a1a;        /* MIT cardinal, muted */
-      --accent-soft: #f5ecec;
-      --link: #6b4f2a;          /* warm scholarly brown */
-      --link-hover: #8a1a1a;
+      --bg: #0b0e14;
+      --bg-elevated: #11151d;
+      --card-bg: #141923;
+      --border: #232a36;
+      --border-strong: #34404f;
+      --text: #c8cfd8;
+      --text-soft: #8a94a3;
+      --text-muted: #6a7382;
+      --text-strong: #f0f3f7;
+      --accent: #d96b6b;        /* warm cardinal — academic, not neon */
+      --accent-soft: rgba(217,107,107,0.10);
+      --link: #8ab4d8;
+      --link-hover: #b9d3eb;
       --serif: 'Source Serif 4', 'Charter', 'Iowan Old Style', Georgia, serif;
       --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -48,7 +49,7 @@
     /* === NAV === */
     .topnav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(251, 250, 247, 0.88);
+      background: rgba(11, 14, 20, 0.85);
       backdrop-filter: saturate(160%) blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -62,7 +63,6 @@
       font-weight: 600;
       font-size: 1.05rem;
       color: var(--text-strong);
-      letter-spacing: 0;
     }
     .nav-links { display: flex; gap: 22px; }
     .nav-links a {
@@ -88,9 +88,9 @@
     .avatar {
       width: 148px; height: 148px;
       border-radius: 50%;
-      background: var(--surface) center/cover no-repeat;
+      background: var(--bg-elevated) center/cover no-repeat;
       flex-shrink: 0;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-strong);
     }
     .hero-text h1 {
       font-family: var(--serif);
@@ -141,7 +141,6 @@
       margin-bottom: 16px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
-      letter-spacing: 0;
     }
 
     /* === ABOUT === */
@@ -183,9 +182,9 @@
 
     .pub-card {
       display: grid;
-      grid-template-columns: 220px 1fr;
+      grid-template-columns: 280px 1fr;
       gap: 0;
-      background: var(--surface);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 6px;
       overflow: hidden;
@@ -193,14 +192,16 @@
     }
     .pub-card:hover {
       border-color: var(--border-strong);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 18px -8px rgba(0,0,0,0.07);
+      box-shadow: 0 8px 24px -10px rgba(0,0,0,0.5);
     }
 
     .pub-thumb {
-      min-height: 150px;
-      background: #f0ece3 center/cover no-repeat;
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      background: var(--bg-elevated) center/cover no-repeat;
       position: relative;
       border-right: 1px solid var(--border);
+      overflow: hidden;
     }
     .pub-thumb video, .pub-thumb img {
       width: 100%; height: 100%;
@@ -212,11 +213,11 @@
       display: flex; align-items: center; justify-content: center;
       font-family: var(--serif);
       font-size: 0.85rem; color: var(--text-muted);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .pub-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
+    .pub-body { padding: 18px 22px; display: flex; flex-direction: column; gap: 5px; }
     .pub-title {
       font-family: var(--serif);
       font-size: 1.05rem;
@@ -257,9 +258,9 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-    .st-review { background: #f5efe2; color: #7a5a14; border: 1px solid #e7d9b4; }
-    .st-accept { background: #e9f1e7; color: #3a6d2c; border: 1px solid #c8dcc1; }
-    .st-pub    { background: #ecedf3; color: #3f4a78; border: 1px solid #d0d4e1; }
+    .st-review { background: rgba(212,167,44,0.10); color: #d4a72c; border: 1px solid rgba(212,167,44,0.25); }
+    .st-accept { background: rgba(63,185,80,0.10); color: #6dc581; border: 1px solid rgba(63,185,80,0.25); }
+    .st-pub    { background: rgba(120,150,200,0.10); color: #97afd0; border: 1px solid rgba(120,150,200,0.25); }
 
     /* === SIDEBAR === */
     .sidebar section { margin-bottom: 32px; }
@@ -305,7 +306,7 @@
       .hero-text h1 { font-size: 1.95rem; }
       .main-grid { grid-template-columns: 1fr; gap: 20px; }
       .pub-card { grid-template-columns: 1fr; }
-      .pub-thumb { height: 200px; min-height: 200px; border-right: none; border-bottom: 1px solid var(--border); }
+      .pub-thumb { aspect-ratio: 4 / 3; border-right: none; border-bottom: 1px solid var(--border); }
       .topnav-inner { padding: 12px 20px; }
     }
   </style>
@@ -380,7 +381,7 @@
         <section>
           <h2>News</h2>
           <ul class="news-list" id="newsList">
-            <li><span class="news-date">2026.01</span><span>Paper on <em>Realizing Robotic Swimming with Strongly-Coupled Fluid–Robot Multiphysics</em> submitted to <strong>RSS 2026</strong>.</span></li>
+            <li><span class="news-date">2026.04</span><span>Paper on <em>Strongly-Coupled Fluid–Robot Multiphysics</em> accepted at <strong>RSS 2026</strong>!</span></li>
             <li><span class="news-date">2026.01</span><span>Paper on <em>Spatiotemporal Stiffness Modulation</em> accepted at <strong>npj Robotics</strong>.</span></li>
             <li><span class="news-date">2025.10</span><span>Two workshop papers presented at <strong>CoRL 2025</strong> — SwimGym and Unified Multiphysics.</span></li>
             <li><span class="news-date">2025.07</span><span>Paper on <em>Aerial-Aquatic Robot</em> accepted at <strong>IROS 2025</strong> (Oral).</span></li>
@@ -405,6 +406,21 @@
 
           <div class="pub-grid">
 
+            <!-- RSS 2026 (Accepted) -->
+            <div class="pub-card">
+              <div class="pub-thumb">
+                <img src="rss2026.gif" alt="RSS 2026 — Strongly-Coupled Fluid-Robot Multiphysics" loading="lazy">
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">Realizing Robotic Swimming with Strongly-Coupled Fluid–Robot Multiphysics <span class="status st-accept">Accepted</span></div>
+                <div class="pub-authors"><strong>J. Hu*</strong>, J. H. Lee*, C. Majidi, Z. Manchester</div>
+                <div class="pub-venue">Robotics: Science and Systems (RSS), 2026</div>
+                <div class="badges">
+                  <a href="https://drive.google.com/drive/folders/1YacPtxmqXjM4Ed6mYpAPxMvq7ng3v6qk" class="badge" target="_blank">Paper</a>
+                </div>
+              </div>
+            </div>
+
             <!-- npj Robotics (Accepted) -->
             <div class="pub-card">
               <div class="pub-thumb">
@@ -416,21 +432,6 @@
                 <div class="pub-venue">npj Robotics, 2026</div>
                 <div class="badges">
                   <a href="https://drive.google.com/file/d/1MGUCGkq_2HPAL21sU5o2qaWzqa-F2ZyQ/view" class="badge" target="_blank">Paper</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- RSS 2026 (Under Review) -->
-            <div class="pub-card">
-              <div class="pub-thumb">
-                <img src="rss2026.gif" alt="RSS 2026 — Strongly-Coupled Fluid-Robot Multiphysics" loading="lazy">
-              </div>
-              <div class="pub-body">
-                <div class="pub-title">Realizing Robotic Swimming with Strongly-Coupled Fluid–Robot Multiphysics <span class="status st-review">Under Review</span></div>
-                <div class="pub-authors"><strong>J. Hu*</strong>, J. H. Lee*, C. Majidi, Z. Manchester</div>
-                <div class="pub-venue">RSS 2026 (Under Review)</div>
-                <div class="badges">
-                  <a href="https://drive.google.com/drive/folders/1YacPtxmqXjM4Ed6mYpAPxMvq7ng3v6qk" class="badge" target="_blank">Paper</a>
                 </div>
               </div>
             </div>
