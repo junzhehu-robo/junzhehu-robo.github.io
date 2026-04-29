@@ -4,270 +4,309 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Junzhe Hu | MIT CSAIL</title>
-  <meta name="description" content="Personal academic homepage of Junzhe Hu — PhD student in MIT Mechanical Engineering and member of CSAIL's Distributed Robotics Laboratory. Research in bio-inspired robotics, embodied intelligence, fluid-robot interaction, and robot learning." />
+  <meta name="description" content="Personal academic homepage of Junzhe Hu — PhD student at MIT CSAIL's Distributed Robotics Laboratory. Research in bio-inspired robotics, embodied intelligence, fluid-robot interaction, and robot learning." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0a0e14;
-      --bg-elevated: #111820;
-      --card-bg: #151c27;
-      --card-border: #1e2a3a;
-      --card-border-hover: #2d4158;
-      --text-main: #c5cdd8;
-      --text-muted: #6e7f94;
-      --text-bright: #e8ecf1;
-      --accent: #4d9de6;
-      --accent-soft: rgba(77,157,230,0.12);
-      --accent-hover: #6bb3f0;
-      --red: #c41e3a;
-      --green: #3fb950;
-      --yellow: #d4a72c;
-      --purple: #a78bfa;
-      --mono: 'JetBrains Mono', monospace;
+      --bg: #fbfaf7;
+      --surface: #ffffff;
+      --border: #e7e3da;
+      --border-strong: #cfc9bc;
+      --text: #2a2a2a;
+      --text-soft: #5b5b5b;
+      --text-muted: #8a8a85;
+      --text-strong: #111;
+      --accent: #8a1a1a;        /* MIT cardinal, muted */
+      --accent-soft: #f5ecec;
+      --link: #6b4f2a;          /* warm scholarly brown */
+      --link-hover: #8a1a1a;
+      --serif: 'Source Serif 4', 'Charter', 'Iowan Old Style', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
       background: var(--bg);
-      color: var(--text-main);
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      font-family: var(--sans);
       font-size: 16px;
       line-height: 1.65;
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-
     body { min-height: 100vh; }
 
-    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--accent-hover); }
+    a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; transition: color .15s, border-color .15s; }
+    a:hover { color: var(--link-hover); border-bottom-color: currentColor; }
 
     /* === NAV === */
     .topnav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(10,14,20,0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--card-border);
+      background: rgba(251, 250, 247, 0.88);
+      backdrop-filter: saturate(160%) blur(10px);
+      border-bottom: 1px solid var(--border);
     }
     .topnav-inner {
-      max-width: 1060px; margin: 0 auto;
+      max-width: 1040px; margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 12px 28px;
+      padding: 14px 28px;
     }
-    .nav-brand { font-weight: 700; font-size: 1.05rem; color: var(--text-bright); letter-spacing: -0.02em; }
-    .nav-links { display: flex; gap: 24px; }
-    .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-brand {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text-strong);
+      letter-spacing: 0;
+    }
+    .nav-links { display: flex; gap: 22px; }
+    .nav-links a {
+      color: var(--text-soft);
+      font-size: 0.92rem;
+      font-weight: 500;
+      border-bottom: none;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent);
+      border-bottom: none;
+    }
 
     /* === LAYOUT === */
-    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
 
     /* === HERO === */
     .hero {
-      display: flex; gap: 36px; align-items: flex-start;
-      padding: 52px 0 44px;
-      border-bottom: 1px solid var(--card-border);
+      display: flex; gap: 40px; align-items: flex-start;
+      padding: 56px 0 40px;
+      border-bottom: 1px solid var(--border);
     }
-
     .avatar {
-      width: 156px; height: 156px;
+      width: 148px; height: 148px;
       border-radius: 50%;
-      background: var(--bg-elevated) center/cover no-repeat;
+      background: var(--surface) center/cover no-repeat;
       flex-shrink: 0;
-      border: 3px solid var(--card-border);
-      box-shadow: 0 0 0 6px rgba(77,157,230,0.06);
+      border: 1px solid var(--border);
     }
-
     .hero-text h1 {
-      font-size: 2.6rem; font-weight: 700;
-      color: #fff; letter-spacing: -0.03em;
-      line-height: 1.15; margin-bottom: 6px;
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin-bottom: 8px;
     }
-
     .hero-sub {
-      font-size: 1.08rem; color: var(--text-muted);
-      font-weight: 400; margin-bottom: 16px; line-height: 1.55;
+      font-size: 1rem;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.6;
     }
-    .hero-sub strong { color: var(--text-bright); font-weight: 600; }
-    .cmu { color: var(--red); font-weight: 700; }
-    .mit { color: #a31f34; font-weight: 700; }
+    .hero-sub strong { color: var(--text-strong); font-weight: 600; }
+    .mit { color: var(--accent); font-weight: 600; }
 
-    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
-    .chip {
-      font-family: var(--mono); font-size: 0.78rem; font-weight: 500;
-      padding: 4px 11px; border-radius: 6px;
-      background: var(--accent-soft); color: var(--accent);
-      border: 1px solid rgba(77,157,230,0.15);
+    .hero-links {
+      display: flex; gap: 18px; flex-wrap: wrap;
+      font-size: 0.92rem;
+      color: var(--text-soft);
     }
-
-    .hero-links { display: flex; gap: 14px; flex-wrap: wrap; }
     .hero-links a {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-weight: 600; font-size: 0.9rem;
-      padding: 6px 14px; border-radius: 8px;
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
-      transition: all 0.2s;
+      color: var(--text-soft);
+      border-bottom: 1px solid var(--border-strong);
+      padding-bottom: 1px;
     }
-    .hero-links a:hover {
-      border-color: var(--accent); color: var(--accent);
-      background: var(--accent-soft);
-    }
+    .hero-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .hero-links span.sep { color: var(--border-strong); }
 
     /* === MAIN GRID === */
     .main-grid {
       display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 40px;
-      padding-top: 44px;
+      grid-template-columns: 1fr 280px;
+      gap: 56px;
+      padding-top: 40px;
       padding-bottom: 60px;
     }
-
-    section { margin-bottom: 44px; }
+    section { margin-bottom: 40px; }
 
     h2 {
-      font-size: 1.2rem; font-weight: 700; color: var(--text-bright);
-      margin-bottom: 18px; padding-bottom: 10px;
-      border-bottom: 1px solid var(--card-border);
-      letter-spacing: -0.01em;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0;
     }
 
     /* === ABOUT === */
-    .about p { margin-bottom: 12px; font-size: 0.97rem; }
-    .about strong { color: var(--text-bright); }
+    .about p { margin-bottom: 14px; font-size: 0.97rem; color: var(--text); }
+    .about strong { color: var(--text-strong); font-weight: 600; }
 
     /* === NEWS === */
-    .news-list { list-style: none; padding-left: 18px; border-left: 2px solid var(--card-border); }
+    .news-list { list-style: none; }
     .news-list li {
-      position: relative; padding-left: 18px; margin-bottom: 14px; font-size: 0.93rem;
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 16px;
+      padding: 8px 0;
+      font-size: 0.94rem;
+      color: var(--text);
+      border-bottom: 1px dashed var(--border);
     }
-    .news-list li::before {
-      content: '';
-      position: absolute; left: -24px; top: 8px;
-      width: 10px; height: 10px;
-      background: var(--bg); border: 2px solid var(--text-muted);
-      border-radius: 50%; transition: all 0.2s;
-    }
-    .news-list li:hover::before { border-color: var(--accent); background: var(--accent); }
+    .news-list li:last-child { border-bottom: none; }
     .news-date {
-      font-family: var(--mono); font-size: 0.82rem;
-      color: var(--accent); font-weight: 500; margin-right: 4px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      padding-top: 2px;
     }
     .news-hidden { display: none; }
     .news-toggle {
-      margin-top: 8px; margin-left: 18px;
-      font-size: 0.88rem; cursor: pointer; color: var(--text-muted);
+      margin-top: 12px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      color: var(--text-muted);
       user-select: none;
+      display: inline-block;
     }
     .news-toggle:hover { color: var(--accent); }
 
     /* === PUBLICATIONS === */
-    .pub-grid { display: grid; gap: 20px; }
+    .pub-grid { display: grid; gap: 22px; }
 
     .pub-card {
-      display: grid; grid-template-columns: 220px 1fr;
-      gap: 0; background: var(--card-bg);
-      border: 1px solid var(--card-border); border-radius: 10px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
       overflow: hidden;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      transition: border-color .2s, box-shadow .2s;
     }
     .pub-card:hover {
-      border-color: var(--card-border-hover);
-      box-shadow: 0 8px 32px -8px rgba(0,0,0,0.5);
-      transform: translateY(-2px);
+      border-color: var(--border-strong);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 18px -8px rgba(0,0,0,0.07);
     }
 
     .pub-thumb {
-      min-height: 150px; background: var(--bg-elevated) center/cover no-repeat;
+      min-height: 150px;
+      background: #f0ece3 center/cover no-repeat;
       position: relative;
+      border-right: 1px solid var(--border);
     }
-    .pub-thumb video, .pub-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pub-thumb video, .pub-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pub-thumb-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-size: 0.85rem; color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
 
-    .pub-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
-    .pub-title { font-size: 1.02rem; font-weight: 700; color: #fff; line-height: 1.4; }
-    .pub-authors { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
-    .pub-authors strong { color: var(--text-bright); }
-    .pub-venue { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-top: 2px; }
+    .pub-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      line-height: 1.35;
+    }
+    .pub-authors {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      line-height: 1.55;
+    }
+    .pub-authors strong { color: var(--text-strong); font-weight: 600; }
+    .pub-venue {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 2px;
+      letter-spacing: 0.02em;
+    }
 
-    .badges { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+    .badges { display: flex; gap: 14px; margin-top: 8px; flex-wrap: wrap; font-size: 0.85rem; }
     .badge {
-      display: inline-block; padding: 3px 9px; border-radius: 5px;
-      background: var(--card-border); color: var(--text-main);
-      font-size: 0.78rem; font-weight: 500;
-      border: 1px solid transparent; text-decoration: none;
-      transition: all 0.2s;
+      color: var(--link);
+      border-bottom: 1px solid var(--border-strong);
+      padding-bottom: 1px;
     }
-    .badge:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+    .badge:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
-    .status { font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
-    .st-review { background: rgba(167,139,250,0.12); color: var(--purple); }
-    .st-accept { background: rgba(63,185,80,0.12); color: var(--green); }
-    .st-prog { background: rgba(212,167,44,0.12); color: var(--yellow); }
-    .st-pub { background: rgba(63,185,80,0.12); color: var(--green); }
+    .status {
+      font-family: var(--mono);
+      font-size: 0.7rem; font-weight: 500;
+      padding: 2px 7px;
+      border-radius: 3px;
+      margin-left: 6px;
+      vertical-align: 2px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .st-review { background: #f5efe2; color: #7a5a14; border: 1px solid #e7d9b4; }
+    .st-accept { background: #e9f1e7; color: #3a6d2c; border: 1px solid #c8dcc1; }
+    .st-pub    { background: #ecedf3; color: #3f4a78; border: 1px solid #d0d4e1; }
 
     /* === SIDEBAR === */
     .sidebar section { margin-bottom: 32px; }
 
-    .exp-card {
+    .side-row {
       display: flex; gap: 12px; align-items: center;
-      padding: 10px; border-radius: 8px;
-      border: 1px solid var(--card-border);
-      background: var(--card-bg);
-      margin-bottom: 8px;
-      transition: border-color 0.2s;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border);
     }
-    .exp-card:hover { border-color: var(--card-border-hover); }
-
-    .exp-logo {
-      width: 40px; height: 40px; border-radius: 6px;
-      background: #000 center/contain no-repeat; flex-shrink: 0;
+    .side-row:last-child { border-bottom: none; }
+    .side-logo {
+      width: 36px; height: 36px;
+      border-radius: 4px;
+      background: #fff center/contain no-repeat;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
     }
-    .exp-name { font-weight: 600; font-size: 0.9rem; color: var(--text-bright); }
-    .exp-detail { font-size: 0.8rem; color: var(--text-muted); }
-
-    .edu-card {
-      display: flex; gap: 12px; align-items: center;
-      padding: 10px; border-radius: 8px;
-      border: 1px solid var(--card-border);
-      background: var(--card-bg);
-      margin-bottom: 8px;
-    }
-    .edu-logo {
-      width: 40px; height: 40px; border-radius: 6px;
-      background: #000 center/contain no-repeat; flex-shrink: 0;
-    }
-    .edu-name { font-weight: 600; font-size: 0.9rem; color: var(--text-bright); }
-    .edu-detail { font-size: 0.8rem; color: var(--text-muted); }
+    .side-name { font-weight: 600; font-size: 0.9rem; color: var(--text-strong); line-height: 1.3; }
+    .side-detail { font-size: 0.8rem; color: var(--text-muted); margin-top: 1px; }
 
     .side-list { list-style: none; padding: 0; }
     .side-list li {
-      font-size: 0.88rem; color: var(--text-muted);
-      padding: 5px 0; border-bottom: 1px solid rgba(30,42,58,0.5);
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      padding: 5px 0;
+      border-bottom: 1px dashed var(--border);
     }
     .side-list li:last-child { border-bottom: none; }
-    .side-list strong { color: var(--text-bright); font-weight: 600; }
+    .side-list strong { color: var(--text-strong); font-weight: 600; }
 
     /* === FOOTER === */
     footer {
-      padding: 20px 0; margin-top: 20px;
-      border-top: 1px solid var(--card-border);
-      text-align: center; color: var(--text-muted); font-size: 0.85rem;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
     }
 
     /* === RESPONSIVE === */
     @media (max-width: 860px) {
-      .hero { flex-direction: column; align-items: center; text-align: center; }
-      .hero-text h1 { font-size: 2rem; }
-      .chips, .hero-links { justify-content: center; }
-      .main-grid { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; align-items: flex-start; gap: 24px; padding: 36px 0 28px; }
+      .hero-text h1 { font-size: 1.95rem; }
+      .main-grid { grid-template-columns: 1fr; gap: 20px; }
       .pub-card { grid-template-columns: 1fr; }
-      .pub-body { padding: 12px 14px 14px; }
-      .pub-thumb { height: 180px; min-height: 180px; }
-      .topnav-inner { flex-direction: column; gap: 10px; }
+      .pub-thumb { height: 200px; min-height: 200px; border-right: none; border-bottom: 1px solid var(--border); }
+      .topnav-inner { padding: 12px 20px; }
     }
   </style>
 </head>
@@ -279,6 +318,7 @@
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="publications.html">Publications</a>
+        <a href="cv.pdf" target="_blank">CV</a>
         <a href="mailto:junzhehu@mit.edu">Contact</a>
       </div>
     </div>
@@ -292,23 +332,19 @@
       <div class="hero-text">
         <h1>Junzhe Hu</h1>
         <div class="hero-sub">
-          PhD Student @ <span class="mit">MIT</span><br>
-          <strong>MIT Computer Science & Artificial Intelligence Lab (CSAIL)</strong> <br>
-        </div>
-
-        <div class="chips">
-          <span class="chip">Bio-inspired Robotics</span>
-          <span class="chip">Computational Design</span>
-          <span class="chip">Physical AI</span>
-          <span class="chip">FSI</span>
-          <span class="chip">Adaptive Control</span>
+          PhD Student, <span class="mit">Massachusetts Institute of Technology</span><br>
+          <strong>Computer Science &amp; Artificial Intelligence Laboratory (CSAIL)</strong><br>
+          Distributed Robotics Laboratory
         </div>
 
         <div class="hero-links">
-          <a href="mailto:junzhehu@mit.edu">✉ Email</a>
-          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">📚 Scholar</a>
-          <a href="https://www.linkedin.com/in/junzhe-hu/" target="_blank">🔗 LinkedIn</a>
-          <a href="cv.pdf" target="_blank">📄 CV</a>
+          <a href="mailto:junzhehu@mit.edu">Email</a>
+          <span class="sep">/</span>
+          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Google Scholar</a>
+          <span class="sep">/</span>
+          <a href="https://www.linkedin.com/in/junzhe-hu/" target="_blank">LinkedIn</a>
+          <span class="sep">/</span>
+          <a href="cv.pdf" target="_blank">CV</a>
         </div>
       </div>
     </div>
@@ -320,25 +356,23 @@
 
         <!-- ABOUT -->
         <section class="about">
-          <h2>About Me</h2>
+          <h2>About</h2>
           <p>
-            I am a PhD student at <a href="https://www.csail.mit.edu" target="_blank">
-  <strong>MIT Computer Science &amp; Artificial Intelligence Lab (CSAIL)</strong>
-</a>,
-advised by
-<a href="https://www.csail.mit.edu/person/daniela-rus" target="_blank">Prof. Daniela Rus</a>.
-           Previously, I completed my M.S. in Robotics at the
-<a href="https://www.ri.cmu.edu/" target="_blank">
-  <strong>Carnegie Mellon University, Robotics Institute</strong>
-</a>,
-where I was co-advised by
-<a href="https://scholar.google.com/citations?hl=en&user=1LyndUsAAAAJ" target="_blank">Prof. Carmel Majidi</a>
-and
-<a href="https://scholar.google.com/citations?user=utFbPYUAAAAJ&hl=en" target="_blank">Prof. Zachary Manchester</a>.
+            I am a PhD student at the
+            <a href="https://www.csail.mit.edu" target="_blank"><strong>MIT Computer Science &amp; Artificial Intelligence Laboratory (CSAIL)</strong></a>,
+            advised by <a href="https://www.csail.mit.edu/person/daniela-rus" target="_blank">Prof. Daniela Rus</a>.
+            Previously, I received my M.S. in Robotics from the
+            <a href="https://www.ri.cmu.edu/" target="_blank"><strong>Carnegie Mellon University Robotics Institute</strong></a>,
+            where I was co-advised by
+            <a href="https://scholar.google.com/citations?hl=en&user=1LyndUsAAAAJ" target="_blank">Prof. Carmel Majidi</a>
+            and
+            <a href="https://scholar.google.com/citations?user=utFbPYUAAAAJ&hl=en" target="_blank">Prof. Zachary Manchester</a>.
           </p>
           <p>
-            My research focuses on <strong>embodied intelligence for robotic systems operating in complex environments</strong>. I develop bio-inspired robots, differentiable physics-based models, and adaptive control and learning methods to study how morphology, physcial properties, and distributed sensing can be co-designed to produce intelligent behavior.
-            I am particularly interested in aquatic and field robotics, fluid-robot interaction, and the role of body intelligence in shaping autonomy.
+            My research centers on <strong>embodied intelligence for robotic systems operating in complex environments</strong>.
+            I develop bio-inspired robots, differentiable physics-based models, and adaptive control and learning methods
+            to study how morphology, physical properties, and distributed sensing can be co-designed to produce intelligent behavior.
+            I am particularly interested in aquatic and field robotics, fluid–robot interaction, and the role of body intelligence in shaping autonomy.
           </p>
         </section>
 
@@ -346,15 +380,15 @@ and
         <section>
           <h2>News</h2>
           <ul class="news-list" id="newsList">
-            <li><span class="news-date">2026.01</span> Paper on <em>Realizing Robotic Swimming with Strongly-Coupled Fluid-Robot Multiphysics</em> submitted to <strong>RSS 2026</strong>.</li>
-            <li><span class="news-date">2026.01</span> Paper on <em>Spatiotemporal Stiffness Modulation</em> accepted at <strong>npj Robotics</strong>!</li>
-            <li><span class="news-date">2025.10</span> Two workshop papers presented at <strong>CoRL 2025</strong> — SwimGym and Unified Multiphysics.</li>
-            <li><span class="news-date">2025.07</span> Paper on <em>Aerial-Aquatic Robot</em> accepted at <strong>IROS 2025</strong> (Oral).</li>
-            <li class="news-hidden"><span class="news-date">2025.06</span> Workshop paper on <em>Unified Multiphysics Framework</em> published at <strong>ICRA 2025 Workshop</strong>.</li>
-            <li class="news-hidden"><span class="news-date">2025.05</span> Paper on <em>Semi-supervised Medical Image Segmentation</em> under reviewed in <strong>IEEE T-MI</strong>.</li>
-            <li class="news-hidden"><span class="news-date">2024.08</span> Joined <strong>CMU Robotics Institute</strong> as a graduate research assistant.</li>
-            <li class="news-hidden"><span class="news-date">2024.05</span> Won <strong>Best Capstone Project Award</strong> (1/130).</li>
-            <li class="news-hidden"><span class="news-date">2023.11</span> Awarded <strong>Chinese Government National Scholarship</strong> (top 0.8%).</li>
+            <li><span class="news-date">2026.01</span><span>Paper on <em>Realizing Robotic Swimming with Strongly-Coupled Fluid–Robot Multiphysics</em> submitted to <strong>RSS 2026</strong>.</span></li>
+            <li><span class="news-date">2026.01</span><span>Paper on <em>Spatiotemporal Stiffness Modulation</em> accepted at <strong>npj Robotics</strong>.</span></li>
+            <li><span class="news-date">2025.10</span><span>Two workshop papers presented at <strong>CoRL 2025</strong> — SwimGym and Unified Multiphysics.</span></li>
+            <li><span class="news-date">2025.07</span><span>Paper on <em>Aerial-Aquatic Robot</em> accepted at <strong>IROS 2025</strong> (Oral).</span></li>
+            <li class="news-hidden"><span class="news-date">2025.06</span><span>Workshop paper on <em>Unified Multiphysics Framework</em> presented at <strong>ICRA 2025 Workshop</strong>.</span></li>
+            <li class="news-hidden"><span class="news-date">2025.05</span><span>Paper on <em>Semi-supervised Medical Image Segmentation</em> under review at <strong>IEEE T-MI</strong>.</span></li>
+            <li class="news-hidden"><span class="news-date">2024.08</span><span>Joined <strong>CMU Robotics Institute</strong> as a graduate research assistant.</span></li>
+            <li class="news-hidden"><span class="news-date">2024.05</span><span>Awarded <strong>Best Capstone Project</strong> (1 / 130).</span></li>
+            <li class="news-hidden"><span class="news-date">2023.11</span><span>Awarded <strong>Chinese National Scholarship</strong> (top 0.8%).</span></li>
           </ul>
           <div class="news-toggle" onclick="toggleNews()">
             <span id="newsToggleText">Show older news ↓</span>
@@ -363,76 +397,83 @@ and
 
         <!-- SELECTED PUBLICATIONS -->
         <section>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
             <h2 style="border:none;padding:0;margin:0;">Selected Publications</h2>
-            <a href="publications.html" style="font-size:0.88rem;font-weight:500;">Full List →</a>
+            <a href="publications.html" style="font-size:0.88rem;">Full list →</a>
           </div>
-          <div style="height:1px;background:var(--card-border);margin-bottom:18px;"></div>
+          <div style="height:1px;background:var(--border);margin:8px 0 20px;"></div>
 
           <div class="pub-grid">
 
             <!-- npj Robotics (Accepted) -->
             <div class="pub-card">
-              <div class="pub-thumb" style="background:linear-gradient(135deg,#0c4a6e,#164e63);"></div>
+              <div class="pub-thumb">
+                <img src="npjrobo.gif" alt="npj Robotics — Spatiotemporal Stiffness Modulation" loading="lazy">
+              </div>
               <div class="pub-body">
                 <div class="pub-title">Spatiotemporal Stiffness Modulation for Efficient Aquatic Robot Locomotion <span class="status st-accept">Accepted</span></div>
                 <div class="pub-authors"><strong>J. Hu</strong>, J. Lee, T. Wu, G. Sue, J. Liao, Z. Erickson, Z. Manchester, C. Majidi</div>
                 <div class="pub-venue">npj Robotics, 2026</div>
                 <div class="badges">
-                  <a href="https://drive.google.com/file/d/1MGUCGkq_2HPAL21sU5o2qaWzqa-F2ZyQ/view" class="badge" target="_blank">📄 Paper</a>
+                  <a href="https://drive.google.com/file/d/1MGUCGkq_2HPAL21sU5o2qaWzqa-F2ZyQ/view" class="badge" target="_blank">Paper</a>
                 </div>
               </div>
             </div>
 
             <!-- RSS 2026 (Under Review) -->
             <div class="pub-card">
-              <div class="pub-thumb" style="background:linear-gradient(135deg,#1e1b4b,#312e81);"></div>
+              <div class="pub-thumb">
+                <img src="rss2026.gif" alt="RSS 2026 — Strongly-Coupled Fluid-Robot Multiphysics" loading="lazy">
+              </div>
               <div class="pub-body">
-                <div class="pub-title">Realizing Robotic Swimming with Strongly-Coupled Fluid-Robot Multiphysics <span class="status st-review">Under Review</span></div>
+                <div class="pub-title">Realizing Robotic Swimming with Strongly-Coupled Fluid–Robot Multiphysics <span class="status st-review">Under Review</span></div>
                 <div class="pub-authors"><strong>J. Hu*</strong>, J. H. Lee*, C. Majidi, Z. Manchester</div>
                 <div class="pub-venue">RSS 2026 (Under Review)</div>
                 <div class="badges">
-                  <a href="https://drive.google.com/drive/folders/1YacPtxmqXjM4Ed6mYpAPxMvq7ng3v6qk" class="badge" target="_blank">📄 Paper</a>
+                  <a href="https://drive.google.com/drive/folders/1YacPtxmqXjM4Ed6mYpAPxMvq7ng3v6qk" class="badge" target="_blank">Paper</a>
                 </div>
               </div>
             </div>
 
             <!-- PNAS (Under Review) -->
             <div class="pub-card">
-              <div class="pub-thumb" style="background:linear-gradient(135deg,#1a1a2e,#16213e);"></div>
+              <div class="pub-thumb">
+                <div class="pub-thumb-placeholder">PNAS</div>
+              </div>
               <div class="pub-body">
                 <div class="pub-title">Vortex-Induced Propulsion in Upstream Robotic Swimming <span class="status st-review">Under Review</span></div>
                 <div class="pub-authors">J. H. Lee*, <strong>J. Hu*</strong>, S. Kazi, M. Luhar, C. Majidi, Z. Manchester</div>
                 <div class="pub-venue">PNAS (Under Review)</div>
-                <div class="badges">
-                  <span class="badge">⏳ Under Review</span>
-                </div>
               </div>
             </div>
 
             <!-- IROS 2025 -->
             <div class="pub-card">
-              <div class="pub-thumb" style="background-image:url('aerial_aquatic_thumb.jpg');"></div>
+              <div class="pub-thumb">
+                <div class="pub-thumb-placeholder">IROS 2025</div>
+              </div>
               <div class="pub-body">
                 <div class="pub-title">A Novel Aerial-Aquatic Locomotion Robot with Variable Stiffness Propulsion Module <span class="status st-pub">Published</span></div>
                 <div class="pub-authors"><strong>J. Hu</strong>, P. Chen, T. Feng, Y. Wen, K. Wu, J. Dong</div>
                 <div class="pub-venue">IEEE IROS 2025 (Oral)</div>
                 <div class="badges">
-                  <a href="https://ieeexplore.ieee.org/document/11247420" class="badge" target="_blank">📄 Paper</a>
-                  <a href="#" class="badge" target="_blank">🎥 Video</a>
+                  <a href="https://ieeexplore.ieee.org/document/11247420" class="badge" target="_blank">Paper</a>
+                  <a href="#" class="badge" target="_blank">Video</a>
                 </div>
               </div>
             </div>
 
             <!-- IEEE T-MI -->
             <div class="pub-card">
-              <div class="pub-thumb" style="background:linear-gradient(135deg,#4a1942,#2d1b69);"></div>
+              <div class="pub-thumb">
+                <div class="pub-thumb-placeholder">IEEE T-MI</div>
+              </div>
               <div class="pub-body">
                 <div class="pub-title">Expanding and Rectifying Pseudo-Label Perturbation Space for Semi-Supervised Medical Image Segmentation <span class="status st-pub">Published</span></div>
                 <div class="pub-authors"><strong>J. Hu</strong>, Y. Wen, E. Roussinova, M. Bouri</div>
                 <div class="pub-venue">IEEE Trans. Medical Imaging, 2025</div>
                 <div class="badges">
-                  <a href="https://drive.google.com/file/d/1XIzOFnWbe76Z6WX7-l-z-U77fD1vB0x6/view" class="badge" target="_blank">📄 Paper</a>
+                  <a href="https://drive.google.com/file/d/1XIzOFnWbe76Z6WX7-l-z-U77fD1vB0x6/view" class="badge" target="_blank">Paper</a>
                 </div>
               </div>
             </div>
@@ -447,71 +488,57 @@ and
 
         <section>
           <h2>Education</h2>
-          <div class="edu-card">
-            <div class="edu-logo" style="background-image:url('MIT4.png');background-color:#fff;"></div>
+          <div class="side-row">
+            <div class="side-logo" style="background-image:url('MIT4.png');"></div>
             <div>
-              <div class="edu-name">MIT Mechanical Engineering</div>
-              <div class="edu-detail">PhD · 2026–Present</div>
+              <div class="side-name">MIT</div>
+              <div class="side-detail">PhD, Mechanical Engineering · 2026–</div>
             </div>
           </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background-image:url('CMURI.jpg');"></div>
+          <div class="side-row">
+            <div class="side-logo" style="background-image:url('CMURI.jpg');"></div>
             <div>
-              <div class="edu-name">CMU Robotics Institute</div>
-              <div class="edu-detail">M.S. Robotics · GPA 4.0 · 2024–26</div>
+              <div class="side-name">CMU Robotics Institute</div>
+              <div class="side-detail">M.S. Robotics · GPA 4.0 · 2024–26</div>
             </div>
-          <!-- </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background-image:url('UC.png');background-color:#fff;"></div>
-            <div>
-              <div class="edu-name">Univ. of Cincinnati</div>
-              <div class="edu-detail">B.S. MechE · Cum Laude · 2023–24</div>
-            </div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-logo" style="background-image:url('CQU.png');background-color:#fff;"></div>
-            <div>
-              <div class="edu-name">Chongqing University</div>
-              <div class="edu-detail">B.E. MechE · GPA 3.84 · 2019–23</div>
-            </div> -->
           </div>
         </section>
 
         <section>
           <h2>Research Experience</h2>
-          <div class="exp-card">
-            <div class="exp-logo" style="background-image:url('MIT5.jpg');background-color:#fff;"></div>
+          <div class="side-row">
+            <div class="side-logo" style="background-image:url('MIT5.jpg');"></div>
             <div>
-              <div class="exp-name">MIT CSAIL</div>
-              <div class="exp-detail">PhD Researcher · 2026–Present</div>
+              <div class="side-name">MIT CSAIL</div>
+              <div class="side-detail">PhD Researcher · 2026–</div>
             </div>
           </div>
-          <div class="exp-card">
-            <div class="exp-logo" style="background-image:url('CMURI.jpg');"></div>
+          <div class="side-row">
+            <div class="side-logo" style="background-image:url('CMURI.jpg');"></div>
             <div>
-              <div class="exp-name">CMU Robotics Institute</div>
-              <div class="exp-detail">Graduate RA · 2024–26</div>
+              <div class="side-name">CMU Robotics Institute</div>
+              <div class="side-detail">Graduate RA · 2024–26</div>
             </div>
           </div>
-          <div class="exp-card">
-            <div class="exp-logo" style="background-image:url('EPFL.png');background-color:#fff;"></div>
+          <div class="side-row">
+            <div class="side-logo" style="background-image:url('EPFL.png');"></div>
             <div>
-              <div class="exp-name">EPFL Biorobotics Lab</div>
-              <div class="exp-detail">RA Intern · 2023</div>
+              <div class="side-name">EPFL Biorobotics Lab</div>
+              <div class="side-detail">Research Intern · 2023</div>
             </div>
           </div>
-          <div class="exp-card">
-            <div class="exp-logo" style="background-image:url('INRIA.png');background-color:#fff;"></div>
+          <div class="side-row">
+            <div class="side-logo" style="background-image:url('INRIA.png');"></div>
             <div>
-              <div class="exp-name">INRIA</div>
-              <div class="exp-detail">RA Intern(Online). · 2023–24</div>
+              <div class="side-name">INRIA</div>
+              <div class="side-detail">Remote RA · 2023–24</div>
             </div>
           </div>
-          <div class="exp-card">
-            <div class="exp-logo" style="background-image:url('SIAT.jfif');"></div>
+          <div class="side-row">
+            <div class="side-logo" style="background-image:url('SIAT.jfif');"></div>
             <div>
-              <div class="exp-name">Chinese Academy of Sciences</div>
-              <div class="exp-detail">RA Intern · 2021–22</div>
+              <div class="side-name">Chinese Academy of Sciences</div>
+              <div class="side-detail">Research Intern · 2021–22</div>
             </div>
           </div>
         </section>
@@ -520,8 +547,8 @@ and
           <h2>Skills</h2>
           <ul class="side-list">
             <li><strong>Languages:</strong> Python, C++, C, MATLAB, Julia</li>
-            <li><strong>ML/Sim:</strong> PyTorch, MuJoCo, SOFA, ROS</li>
-            <li><strong>CAD/FEA:</strong> SolidWorks, Blender, COMSOL, Abaqus</li>
+            <li><strong>ML / Sim:</strong> PyTorch, MuJoCo, SOFA, ROS</li>
+            <li><strong>CAD / FEA:</strong> SolidWorks, Blender, COMSOL, Abaqus</li>
             <li><strong>Hardware:</strong> STM32, Arduino, PCB, 3D Printing</li>
           </ul>
         </section>
@@ -529,10 +556,10 @@ and
         <section>
           <h2>Honors</h2>
           <ul class="side-list">
-            <li>🏆 Best Capstone Award, UC (1/130)</li>
-            <li>🏅 National Scholarship, China (top 0.8%)</li>
-            <li>⭐ CQU Student Pacesetter (top 0.18%)</li>
-            <li>📐 MCM/ICM Meritorious Winner</li>
+            <li>Best Capstone Award, UC (1 / 130)</li>
+            <li>Chinese National Scholarship (top 0.8%)</li>
+            <li>CQU Student Pacesetter (top 0.18%)</li>
+            <li>MCM/ICM Meritorious Winner</li>
           </ul>
         </section>
 
@@ -540,15 +567,15 @@ and
     </div>
 
     <footer>
-      Last updated: <span id="updated"></span> · © 2026 Junzhe Hu
+      Last updated <span id="updated"></span> · © 2026 Junzhe Hu
     </footer>
   </div>
 
   <script>
     document.getElementById('updated').textContent =
-      new Date().toLocaleDateString('en-US',{year:'numeric',month:'short'});
+      new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 
-    function toggleNews(){
+    function toggleNews() {
       const items = document.querySelectorAll('.news-hidden');
       const txt = document.getElementById('newsToggleText');
       const show = items[0].style.display !== 'list-item';
