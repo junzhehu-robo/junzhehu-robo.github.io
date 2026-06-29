@@ -146,6 +146,13 @@
     /* === ABOUT === */
     .about p { margin-bottom: 14px; font-size: 0.97rem; color: var(--text); }
     .about strong { color: var(--text-strong); font-weight: 600; }
+    .about .research-accent { color: var(--accent); font-weight: 700; }
+    .research-list {
+      margin: -2px 0 14px 18px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .research-list li { margin-bottom: 7px; padding-left: 4px; }
 
     /* === NEWS === */
     .news-list { list-style: none; }
@@ -377,9 +384,16 @@
           </p>
           <p>
             My research centers on <strong>embodied intelligence for robotic systems operating in complex environments</strong>.
-            I develop bio-inspired robots, differentiable physics-based models, and adaptive control and learning methods
-            to study how morphology, physical properties, and distributed sensing can be co-designed to produce intelligent behavior.
+            I'm a <strong class="research-accent">full-stack roboticist</strong> -- I believe robotics must be solved
+            through progress in many different integral components. Robust autonomy requires the co-design of
+            hardware, models, controllers, and learning algorithms, especially when robots must interact with fluids,
+            soft bodies, and uncertain real-world dynamics. To this end, my research includes:
           </p>
+          <ul class="research-list">
+            <li>Adaptive control and learning methods that turn physical intelligence into robust behavior on real robotic platforms;</li>
+            <li>Differentiable physics-based modeling and optimization-based control for strongly coupled robot-environment systems;</li>
+            <li>Robot design, including morphology, compliance, and distributed sensing for aquatic and field robots.</li>
+          </ul>
         </section>
 
         <!-- NEWS -->
