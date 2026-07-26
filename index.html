@@ -146,7 +146,7 @@
     /* === ABOUT === */
     .about p { margin-bottom: 14px; font-size: 0.97rem; color: var(--text); }
     .about strong { color: var(--text-strong); font-weight: 600; }
-    .about .research-accent { color: var(--accent); font-weight: 700; }
+    .research-accent { color: var(--accent); font-weight: 700; }
 
     /* === NEWS === */
     .news-list { list-style: none; }
@@ -308,6 +308,46 @@
       color: var(--text-muted);
       font-size: 0.82rem;
     }
+    .visitor-map {
+      margin: 0;
+      padding: 36px 0 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .visitor-map h2 {
+      margin-bottom: 4px;
+      padding: 0;
+      border-bottom: none;
+    }
+    .visitor-map-subtitle {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+    .visitor-map-frame {
+      width: min(100%, 560px);
+      min-height: 300px;
+      margin: 18px auto 12px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at center, rgba(183,47,63,0.10), transparent 58%),
+        var(--bg-elevated);
+    }
+    .visitor-map-frame iframe,
+    .visitor-map-frame canvas {
+      max-width: 100%;
+    }
+    .visitor-map-note {
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+    .visitor-map-note a { color: var(--text-muted); }
+    .visitor-map-note a:hover { color: var(--accent); }
 
     /* === RESPONSIVE === */
     @media (max-width: 860px) {
@@ -317,6 +357,9 @@
       .pub-card { grid-template-columns: 1fr; }
       .pub-thumb { aspect-ratio: 4 / 3; border-right: none; border-bottom: 1px solid var(--border); }
       .topnav-inner { padding: 12px 20px; }
+    }
+    @media (max-width: 560px) {
+      .visitor-map-frame { min-height: 250px; padding: 10px; }
     }
   </style>
 </head>
@@ -368,7 +411,7 @@
             co-advised by
             <a href="https://www.eecs.mit.edu/people/yufeng-kevin-chen/" target="_blank">Prof. Kevin Chen</a>
             and
-            <a href="https://meche.mit.edu/people/faculty/raphz@mit.edu" target="_blank">Prof. Raphael Zufferey</a>,
+            <a href="https://meche.mit.edu/people/faculty/trumper%40mit.edu" target="_blank">Prof. David Trumper</a>,
             and collaborating with
             <a href="https://scholar.google.com/citations?user=utFbPYUAAAAJ&hl=en" target="_blank">Prof. Zachary Manchester</a>
             on constrained optimal control and lightweight optimization-based controllers for robotic systems.
@@ -390,7 +433,7 @@
         <section>
           <h2>News</h2>
           <ul class="news-list" id="newsList">
-            <li><span class="news-date">2026.07</span><span>Our RSS 2026 paper <em>Realizing Robotic Swimming with Unified Fluid–Robot Multiphysics</em> was selected as an <strong>Outstanding Paper Award finalist</strong>.</span></li>
+            <li><span class="news-date">2026.07</span><span>Our RSS 2026 paper <em>Realizing Robotic Swimming with Unified Fluid–Robot Multiphysics</em> was selected as an <strong class="research-accent">Outstanding Paper Award finalist</strong>.</span></li>
             <li><span class="news-date">2026.04</span><span>Paper on <em>Strongly-Coupled Fluid–Robot Multiphysics</em> accepted at <strong>RSS 2026</strong>!</span></li>
             <li><span class="news-date">2026.06</span><span>Our paper <em>Programmable online stiffness modulation for optimized aquatic locomotion</em> was published in <strong>npj Robotics</strong>.</span></li>
             <li><span class="news-date">2025.10</span><span>Two workshop papers presented at <strong>CoRL 2025</strong> — SwimGym and Unified Multiphysics.</span></li>
@@ -557,6 +600,21 @@
 
       </aside>
     </div>
+
+    <section class="visitor-map" aria-labelledby="visitor-map-title">
+      <h2 id="visitor-map-title">Visitors Around the World</h2>
+      <p class="visitor-map-subtitle">Approximate locations of visitors to this site</p>
+      <div class="visitor-map-frame">
+        <script type="text/javascript" id="mmvst_globe" src="https://mapmyvisitors.com/globe.js?d=AZpFCQj-EE86syPxBZwS1X0y1ZxUQCmkOppzQ3IuAnI"></script>
+        <noscript>
+          <a href="https://mapmyvisitors.com/" target="_blank" rel="noopener noreferrer">View visitor map</a>
+        </noscript>
+      </div>
+      <p class="visitor-map-note">
+        Approximate locations derived from IP addresses ·
+        <a href="https://mapmyvisitors.com/b/policy" target="_blank" rel="noopener noreferrer">Privacy</a>
+      </p>
+    </section>
 
     <footer>
       Last updated <span id="updated"></span> · © 2026 Junzhe Hu
