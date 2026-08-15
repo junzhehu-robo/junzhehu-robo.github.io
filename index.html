@@ -7,7 +7,7 @@
   <meta name="description" content="Personal academic homepage of Junzhe Hu — PhD student in Mechanical Engineering at MIT. Research in bio-inspired robotics, embodied intelligence, fluid-robot interaction, and lightweight control for resource-constrained robots." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -24,9 +24,9 @@
       --accent-soft: rgba(183,47,63,0.12);
       --link: #8ab4d8;
       --link-hover: #b9d3eb;
-      --serif: 'Source Serif 4', 'Charter', 'Iowan Old Style', Georgia, serif;
-      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --serif: 'Lato', Verdana, Helvetica, Arial, sans-serif;
+      --sans: 'Lato', Verdana, Helvetica, Arial, sans-serif;
+      --mono: 'Lato', Verdana, Helvetica, Arial, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,8 +35,8 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.65;
+      font-size: 15px;
+      line-height: 1.55;
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -60,7 +60,7 @@
     }
     .nav-brand {
       font-family: var(--serif);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1.05rem;
       color: var(--text-strong);
     }
@@ -81,7 +81,7 @@
 
     /* === HERO === */
     .hero {
-      display: flex; gap: 40px; align-items: flex-start;
+      display: flex; gap: 32px; align-items: center;
       padding: 56px 0 40px;
       border-bottom: 1px solid var(--border);
     }
@@ -92,13 +92,41 @@
       flex-shrink: 0;
       border: 1px solid var(--border-strong);
     }
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .hero-visual {
+      width: 429px;
+      aspect-ratio: 16 / 9;
+      margin-left: auto;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      background: transparent;
+    }
+    .hero-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: translateY(-10%);
+    }
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      pointer-events: none;
+      border-radius: inherit;
+      box-shadow: inset 0 0 12px 8px var(--bg);
+    }
     .hero-text h1 {
       font-family: var(--serif);
-      font-size: 2.4rem;
-      font-weight: 600;
+      font-size: 2.13rem;
+      font-weight: 700;
       color: var(--text-strong);
       letter-spacing: -0.01em;
-      line-height: 1.15;
+      line-height: 1.2;
       margin-bottom: 8px;
     }
     .hero-sub {
@@ -135,8 +163,8 @@
 
     h2 {
       font-family: var(--serif);
-      font-size: 1.25rem;
-      font-weight: 600;
+      font-size: 1.47rem;
+      font-weight: 700;
       color: var(--text-strong);
       margin-bottom: 16px;
       padding-bottom: 8px;
@@ -226,8 +254,8 @@
     .pub-body { padding: 18px 22px; display: flex; flex-direction: column; gap: 5px; }
     .pub-title {
       font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 700;
       color: var(--text-strong);
       line-height: 1.35;
     }
@@ -352,7 +380,8 @@
     /* === RESPONSIVE === */
     @media (max-width: 860px) {
       .hero { flex-direction: column; align-items: flex-start; gap: 24px; padding: 36px 0 28px; }
-      .hero-text h1 { font-size: 1.95rem; }
+      .hero-text h1 { font-size: 1.9rem; }
+      .hero-visual { width: min(100%, 420px); margin-left: 0; }
       .main-grid { grid-template-columns: 1fr; gap: 20px; }
       .pub-card { grid-template-columns: 1fr; }
       .pub-thumb { aspect-ratio: 4 / 3; border-right: none; border-bottom: 1px solid var(--border); }
@@ -383,7 +412,8 @@
       <div class="hero-text">
         <h1>Junzhe Hu</h1>
         <div class="hero-sub">
-          PhD Student, <span class="mit">Massachusetts Institute of Technology</span><br>
+          PhD Student<br>
+          <span class="mit">Massachusetts Institute of Technology</span><br>
           <strong>Department of Mechanical Engineering</strong>
         </div>
 
@@ -395,6 +425,9 @@
           <a href="https://www.linkedin.com/in/junzhe-hu/" target="_blank">LinkedIn</a>
         </div>
       </div>
+      <figure class="hero-visual">
+        <img src="robobee.png" alt="RoboBee robots arranged to spell MIT">
+      </figure>
     </div>
 
     <!-- MAIN -->
@@ -408,10 +441,8 @@
           <p>
             I am a PhD student in Mechanical Engineering at
             the <a href="https://www.mit.edu" target="_blank"><strong>Massachusetts Institute of Technology</strong></a>,
-            co-advised by
-            <a href="https://www.eecs.mit.edu/people/yufeng-kevin-chen/" target="_blank">Prof. Kevin Chen</a>
-            and
-            <a href="https://meche.mit.edu/people/faculty/trumper%40mit.edu" target="_blank">Prof. David Trumper</a>,
+            advised by
+            <a href="https://www.eecs.mit.edu/people/yufeng-kevin-chen/" target="_blank">Prof. Kevin Chen</a>,
             and collaborating with
             <a href="https://scholar.google.com/citations?user=utFbPYUAAAAJ&hl=en" target="_blank">Prof. Zachary Manchester</a>
             on constrained optimal control and lightweight optimization-based controllers for robotic systems.
