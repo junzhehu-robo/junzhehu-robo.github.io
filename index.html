@@ -86,7 +86,7 @@
       border-bottom: 1px solid var(--border);
     }
     .avatar {
-      width: 148px; height: 148px;
+      width: 200px; height: 200px;
       border-radius: 50%;
       background: var(--bg-elevated) center/cover no-repeat;
       flex-shrink: 0;
@@ -380,6 +380,7 @@
     /* === RESPONSIVE === */
     @media (max-width: 860px) {
       .hero { flex-direction: column; align-items: flex-start; gap: 24px; padding: 36px 0 28px; }
+      .avatar { width: 180px; height: 180px; }
       .hero-text h1 { font-size: 1.9rem; }
       .hero-visual { width: min(100%, 420px); margin-left: 0; }
       .main-grid { grid-template-columns: 1fr; gap: 20px; }
